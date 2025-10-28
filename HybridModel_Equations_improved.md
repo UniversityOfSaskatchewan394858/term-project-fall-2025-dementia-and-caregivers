@@ -435,5 +435,66 @@ $$\sigma_C \rightarrow Q_C \rightarrow Q_E \rightarrow H(t) \rightarrow N_C \rig
 
 
 ---
+** CIHI (2025) - Unpaid Caregiver Challenges and Supports**
+Source: Canadian Institute for Health Information (CIHI)
+
+URL: https://www.cihi.ca/en/dementia-in-canada/unpaid-caregiver-challenges-and-supports
+
+Date: 2025 (Latest)
+
+What it supports:
+
+- 26 hours/week Canadian dementia caregivers (vs 17 for other seniors)
+
+- 45% experience distress (vs 26% for other caregivers)
+
+- $1.4 billion total out-of-pocket costs for Canadian caregivers
+
+- Behavioural/verbal aggression increases distress by 1.6×
+
+** Chambers et al. (2005) - Research on Alzheimer's Caregiving in Canada**
+Source: Health Promotion and Chronic Disease Prevention in Canada (Peer-reviewed)
+
+URL: https://www.canada.ca/en/public-health/services/reports-publications/health-promotion-chronic-disease-prevention-canada-research-policy-practice/vol-25-no-3-2004/research-on-alzheimercaregiving-canada.html
+
+What it supports:
+
+- 63 hours/month informal assistance from primary caregivers (Canadian Study of Health and Aging - CSHA)
+
+- Family members provide 75-85% of care for frail Canadian seniors
+
+- Caregiving is evolving long-term process with predictable transitions
+
+- Evidence-based interventions studied in Canadian context
+
+** Alzheimer Society Canada - Research Studies & Data**
+Source: Alzheimer Society Canada (National organization)
+
+URL: https://alzheimer.ca/find-studies/studies
+
+What it supports:
+
+- 61% of Canadians with dementia live at home
+
+- 87% have informal caregiver support at home
+
+- Canadian-specific dementia progression patterns
+
+- Young onset dementia caregivers face unique challenges
+
+** Statistics Canada / CCCE - Caregiving in Canada (2022)**
+Source: Canadian Centre for Caregiving Excellence (CCCE) Report
+
+URL: https://canadiancaregiving.org/canadian-caregivers-are-at-a-breaking-point/
+
+What it supports:
+
+- 1 in 4 Canadians is a caregiver; 1 in 2 will become one
+
+- 7.8 million Canadians provide ~20 hours/week unpaid care
+
+- 5.7 billion hours/year of unpaid care ($97.1B value)
+
+- Caregivers at breaking point - burnout, financial strain
 
 **Last Updated:** October 28, 2025
