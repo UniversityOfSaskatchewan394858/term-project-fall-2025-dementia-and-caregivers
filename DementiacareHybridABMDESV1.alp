@@ -109,11 +109,23 @@
 			<CurrentLevel>1761801718543</CurrentLevel>
 			<ConnectionsId>1761801718538</ConnectionsId>
 			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1761847948072</Id>
+					<Name><![CDATA[outputLog]]></Name>
+					<X>-180</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[String]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1761806193380</Id>
 					<Name><![CDATA[enableInterventions]]></Name>
 					<X>-160</X><Y>190</Y>
-					<Label><X>-125</X><Y>0</Y></Label>
+					<Label><X>-175</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -137,7 +149,7 @@
 					<Id>1761806213183</Id>
 					<Name><![CDATA[interventionStartWeek]]></Name>
 					<X>-160</X><Y>220</Y>
-					<Label><X>-135</X><Y>0</Y></Label>
+					<Label><X>-190</X><Y>5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -161,7 +173,7 @@
 					<Id>1761806233715</Id>
 					<Name><![CDATA[simulationDurationYears]]></Name>
 					<X>-160</X><Y>250</Y>
-					<Label><X>-145</X><Y>0</Y></Label>
+					<Label><X>-210</X><Y>5</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -182,6 +194,30 @@
 					</Properties>                 
 				</Variable>
 			</Variables>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1761848034492</Id>
+					<Name><![CDATA[collectWeeklyData]]></Name>
+					<X>-180</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1761848163838</Id>
+					<Name><![CDATA[exportCSV]]></Name>
+					<X>-180</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1761801718538</Id>
@@ -209,7 +245,7 @@
 					<Id>1761802694099</Id>
 					<Name><![CDATA[caregiver]]></Name>
 					<X>-80</X><Y>40</Y>
-					<Label><X>-80</X><Y>0</Y></Label>
+					<Label><X>-95</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -293,7 +329,7 @@
 					<Id>1761802707668</Id>
 					<Name><![CDATA[patientWithDem]]></Name>
 					<X>-80</X><Y>130</Y>
-					<Label><X>-110</X><Y>0</Y></Label>
+					<Label><X>-145</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -324,18 +360,12 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[healthStatus]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[uniform(0.010,0.6)]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[dementiaStage]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[diseaseProgressionRate]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[careQualityEffectiveness]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[behaviourSymptomSeverity]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -585,7 +615,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[Color]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[BLACK]]></Code>
+							<Code><![CDATA[green]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -744,6 +774,7 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="140" Height="40">
+						<EntryAction><![CDATA[DistressColour = green;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -756,6 +787,7 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="140" Height="40">
+						<EntryAction><![CDATA[DistressColour = yellow;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -768,6 +800,7 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="140" Height="40">
+						<EntryAction><![CDATA[DistressColour = orange;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -780,6 +813,7 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="130" Height="40">
+						<EntryAction><![CDATA[DistressColour= red;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -792,6 +826,7 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="150" Height="60">
+						<EntryAction><![CDATA[DistressColour = cyan;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -1093,8 +1128,8 @@
 				<Event>
 					<Id>1761807322259</Id>
 					<Name><![CDATA[WeeklyStressUpdate]]></Name>
-					<X>-160</X><Y>50</Y>
-					<Label><X>10</X><Y>0</Y></Label>
+					<X>-140</X><Y>60</Y>
+					<Label><X>-175</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1388,7 +1423,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1761809708432</Id>
 					<Name><![CDATA[myCaregiver]]></Name>
-					<X>-250</X><Y>-140</Y>
+					<X>210</X><Y>-150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1397,10 +1432,70 @@
 						<Type><![CDATA[Caregiver]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1761845692930</Id>
+					<Name><![CDATA[diseaseProgressionRate]]></Name>
+					<X>210</X><Y>-110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.015]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1761845721174</Id>
+					<Name><![CDATA[careQualityEffectiveness]]></Name>
+					<X>210</X><Y>-80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.5]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1761845793004</Id>
+					<Name><![CDATA[behaviourSymptomSeverity]]></Name>
+					<X>210</X><Y>-50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.4]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1761849104166</Id>
+					<Name><![CDATA[demColour]]></Name>
+					<X>380</X><Y>-160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Color]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[green;]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1761804053569</Id>
 					<Name><![CDATA[careNeedHours]]></Name>
-					<X>-90</X><Y>40</Y>
+					<X>-90</X><Y>120</Y>
 					<Label><X>-140</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1424,7 +1519,7 @@
 				<Variable Class="Parameter">
 					<Id>1761804069440</Id>
 					<Name><![CDATA[professionalCareHours]]></Name>
-					<X>-90</X><Y>70</Y>
+					<X>-90</X><Y>150</Y>
 					<Label><X>-195</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1448,8 +1543,8 @@
 				<Variable Class="Parameter">
 					<Id>1761805921317</Id>
 					<Name><![CDATA[healthStatus]]></Name>
-					<X>-380</X><Y>110</Y>
-					<Label><X>-85</X><Y>0</Y></Label>
+					<X>-90</X><Y>210</Y>
+					<Label><X>-115</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1472,8 +1567,8 @@
 				<Variable Class="Parameter">
 					<Id>1761805946518</Id>
 					<Name><![CDATA[dementiaStage]]></Name>
-					<X>-380</X><Y>140</Y>
-					<Label><X>-100</X><Y>0</Y></Label>
+					<X>-90</X><Y>240</Y>
+					<Label><X>-140</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1493,78 +1588,6 @@
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
-				<Variable Class="Parameter">
-					<Id>1761805969655</Id>
-					<Name><![CDATA[diseaseProgressionRate]]></Name>
-					<X>-90</X><Y>160</Y>
-					<Label><X>-200</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.015]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1761805969653</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1761805985326</Id>
-					<Name><![CDATA[careQualityEffectiveness]]></Name>
-					<X>-90</X><Y>190</Y>
-					<Label><X>-210</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.5]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1761805985324</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1761806013061</Id>
-					<Name><![CDATA[behaviourSymptomSeverity]]></Name>
-					<X>-90</X><Y>220</Y>
-					<Label><X>-230</X><Y>5</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.4]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1761806013059</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
@@ -1576,7 +1599,7 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="150" Height="40">
-						<EntryAction><![CDATA[this.dementiaStage = 2;]]></EntryAction>
+						<EntryAction><![CDATA[this.demColour = orange;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -1589,7 +1612,7 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="130" Height="40">
-						<EntryAction><![CDATA[this.dementiaStage = 3;]]></EntryAction>
+						<EntryAction><![CDATA[this.demColour =purple;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -1602,7 +1625,7 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="180" Height="40">
-						<EntryAction><![CDATA[this.dementiaStage = 4;]]></EntryAction>
+						<EntryAction><![CDATA[this.demColour = blue;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -1639,7 +1662,7 @@
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[this.healthStatus < 0.35]]></Condition>
+						<Condition><![CDATA[this.healthStatus < 0.35;]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_WEEK]]></Unit>
@@ -1669,7 +1692,7 @@
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 						</Timeout>
-						<Condition><![CDATA[this.healthStatus < 0.15]]></Condition>
+						<Condition><![CDATA[this.healthStatus < 0.15;]]></Condition>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_WEEK]]></Unit>
@@ -1686,8 +1709,8 @@
 				<Event>
 					<Id>1761809107999</Id>
 					<Name><![CDATA[WeeklyDiseaseProgression]]></Name>
-					<X>-250</X><Y>-40</Y>
-					<Label><X>10</X><Y>0</Y></Label>
+					<X>-80</X><Y>40</Y>
+					<Label><X>-220</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1743,7 +1766,7 @@ if (this.myCaregiver != null) {
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1761808652151</Id>
 					<Name><![CDATA[progressDisease]]></Name>
-					<X>330</X><Y>-140</Y>
+					<X>520</X><Y>-120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
