@@ -10,19 +10,19 @@ This document contains the mathematical equations for the **two agents implement
 ### Equation 1.1: Workload Stress Component
 
 $$S_W = \begin{cases}
-0.5 & \text{if } H_p < 5 \\
-1.5 & \text{if } 5 \leq H_p < 10 \\
-3.0 & \text{if } H_p \geq 10
+0.5 & \text{if } H_p < 25 \\
+1.5 & \text{if } 25 \leq H_p < 30 \\
+3.0 & \text{if } H_p \geq 30
 \end{cases}$$
 
-**What It Measures:** How stressed a caregiver becomes based on the number of hours per day they spend providing direct care.
+**What It Measures:** How stressed a caregiver becomes based on the number of hours per WEEK they spend providing direct care.
 
 **Why It Matters:** Research shows that caring for a dementia patient becomes increasingly stressful at different workload levels. Caregiving is physically and emotionally taxing—more hours = more stress.
 
 **Explanation:**
-- **Less than 5 hours/day (Stress = 0.5):** Manageable workload. The caregiver can handle this without significant stress.
-- **5-10 hours/day (Stress = 1.5):** Moderate workload. The caregiver is getting fatigued but can manage with some breaks.
-- **10+ hours/day (Stress = 3.0):** Overwhelming workload. Nearly full-time caregiving exhausts the caregiver.
+- **Less than 25 hours/weeks (Stress = 0.5):** Manageable workload. The caregiver can handle this without significant stress.
+- **25-30 hours/week (Stress = 1.5):** Moderate workload. The caregiver is getting fatigued but can manage with some breaks.
+- **30+ hours/week (Stress = 3.0):** Overwhelming workload. Nearly full-time caregiving exhausts the caregiver.
 
 **Real-world context:** A 12-hour caregiving day (medication, meals, hygiene, supervision) is unsustainable for most family members.
 
@@ -36,9 +36,10 @@ $$S_W = \begin{cases}
 ### Equation 1.2: Financial Stress Component
 
 $$S_F = \begin{cases}
-3.0 & \text{if } I_w < $1,275 \\
-1.5 & \text{if } $1,275 \leq I_w < $1,600 \\
-0.5 & \text{if } I_w \geq 1,600
+3.0 & \text{if } I_w < $800 \\
+1.5 & \text{if } $800 \leq I_w < $1,300 \\
+0.5 & \text{if } $1,300 \leq I_w < 1,900 \\ 
+0.0 & \text{if } I_w > 1,900
 \end{cases}$$
 
 **What It Measures:** How stressed a caregiver becomes based on weekly family income (financial security).
@@ -46,9 +47,9 @@ $$S_F = \begin{cases}
 **Why It Matters:** Financial strain is a major stressor for caregivers. Many cut work hours to provide care, reducing income. Others face medical bills, home modifications, or lost opportunities for earning.
 
 **Explanation:**
-- **Less than $1,275k/week (Stress = 3.0):** Financial crisis. The family is struggling to meet basic needs. Very high stress.
-- **$1.275k-$1.6k/week (Stress = 1.5):** Moderate financial strain. They can pay bills but with difficulty. Some stress but manageable.
-- **$1.6k+/week (Stress = 0.5):** Financially stable. The family has cushion for unexpected expenses. Low financial stress.
+- **Less than $800/week (Stress = 3.0):** Financial crisis. The family is struggling to meet basic needs. Very high stress.
+- **$800-$1.3k/week (Stress = 1.5):** Moderate financial strain. They can pay bills but with difficulty. Some stress but manageable.
+- **$1.3k- 1.9k/week (Stress = 0.5):** Financially stable. The family has cushion for unexpected expenses. Low financial stress.
 
 **Real-world context:** Many caregivers leave their jobs (reducing income) to care for parents/spouses. $1,275/week is roughly the average wage for one person, making caregiving families financially vulnerable.
 
@@ -62,9 +63,10 @@ $$S_F = \begin{cases}
 ### Equation 1.3: Sleep Quality Stress Component
 
 $$S_S = \begin{cases}
-3.0 & \text{if } S_h < 5 \\
-1.5 & \text{if } 5 \leq S_h < 6 \\
-0.5 & \text{if } S_h \geq 6
+3.0 & \text{if } S_h < 28 \\ 
+1.5 & \text{if } 28 \leq S_h < 42 \\
+0.5 & \text{if } 42 \leq S_h < 49 \\
+0.0 & \text{if } S_h \geq 49
 \end{cases}$$
 
 **What It Measures:** How stressed a caregiver becomes based on hours of sleep per night.
@@ -72,10 +74,11 @@ $$S_S = \begin{cases}
 **Why It Matters:** Sleep deprivation is a critical stressor. Dementia patients often have disrupted sleep, waking at night, which forces caregivers to be vigilant (checking on patient, responding to needs). Poor sleep affects immune function, mood, and ability to cope.
 
 **Explanation:**
-- **Less than 5 hours/night (Stress = 3.0):** Severe sleep deprivation. The caregiver is exhausted, which impairs judgment and increases vulnerability to illness. Critical stress level.
-- **5-6 hours/night (Stress = 1.5):** Moderate sleep deficit. Below recommended 7-9 hours, causing fatigue and mood issues.
-- **6+ hours/night (Stress = 0.5):** Acceptable sleep. Allows recovery and resilience. Low stress.
-
+- **Less than 28 hours/night (Stress = 3.0):** Severe sleep deprivation. The caregiver is exhausted, which impairs judgment and increases vulnerability to illness. Critical stress level.
+- **28-42 hours/night (Stress = 1.5):** Moderate sleep deficit. Below recommended 28-49 hours a week, causing fatigue and mood issues.
+- **42-49 hours/Week (Stress = 0.5):** Acceptable sleep. Allows recovery and resilience. Low stress.
+- *49+ hours/Week (Stress = 0.0):** We ignore anything more than 49+/week for our stress
+ 
 **Real-world context:** Many dementia caregivers average 4-5 hours per night due to patients waking, wandering, or having sundowning episodes.
 
 **Implemented in AnyLogic:**
