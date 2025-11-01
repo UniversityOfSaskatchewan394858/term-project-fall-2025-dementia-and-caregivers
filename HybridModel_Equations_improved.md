@@ -408,19 +408,19 @@ $$\sigma_C \rightarrow Q_C \rightarrow Q_E \rightarrow H(t) \rightarrow N_C \rig
 | Symbol | AnyLogic Variable | Type | Range | What It Means |
 |--------|---|---|---|---|
 | \(\sigma_C\) | `stressLevel` | double | 0–3 | Overall caregiver stress |
-| \(S_W\) | `workloadStress` | double | 0–3 | Stress from care hours |
+| \(S_W\) | `workloadStress` | double | 0–3 | Stress from care hours per week |
 | \(S_F\) | `financialStress` | double | 0–3 | Stress from income |
 | \(S_S\) | `sleepStress` | double | 0–3 | Stress from poor sleep |
 | \(Q_C\) | `careQuality` | double | 0.2–1.0 | Quality of family care |
 | \(C_S\) | `copingSkills` | double | 0–1 | Caregiver's coping ability |
-| \(H_p\) | `workloadHoursPerDay` | double | 0–24 | Hours family spends on care |
-| \(I_m\) | `familyIncomeMonthly` | double | 0+ | Monthly family income |
-| \(S_h\) | `sleepQualityHours` | double | 0–12 | Hours of sleep/night |
+| \(H_p\) | `workloadHoursPerWeek` | double | 0–49 | Hours family spends on care per week |
+| \(I_m\) | `familyIncomeWeekly` | double | 0+ | Weekly family income |
+| \(S_h\) | `sleepQualityHourperWeek` | double | 0–12 | Hours of sleep/night |
 | \(H(t)\) | `healthStatus` | double | 0–1 | Patient's health (1=healthy, 0=end-stage) |
 | \(B\) | `behaviouralSymptoms` | int | 0–10 | Behavioral symptom severity |
-| \(N_C\) | `careNeedsHours` | double | 4–20 | Hours of care needed/day |
+| \(N_C\) | `careNeedsHoursPerWeek` | double | 4–20 | Hours of care needed/Week |
 | \(Q_E\) | `effectiveCareQuality` | double | 0.1–1.0 | Combined family+professional care quality |
-| \(P_h\) | `professionalCareHours` | double | 0+ | Hours of professional care/week |
+| \(P_h\) | `professionalCareHoursPerWeek` | double | 0+ | Hours of professional care/week |
 | \(r_d\) | `progressionRate` | double | 0.015 | Disease decline rate/week |
 
 ---
