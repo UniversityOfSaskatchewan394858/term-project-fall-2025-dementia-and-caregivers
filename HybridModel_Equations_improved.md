@@ -36,21 +36,21 @@ $$S_W = \begin{cases}
 ### Equation 1.2: Financial Stress Component
 
 $$S_F = \begin{cases}
-3.0 & \text{if } I_m < 10,000 \\
-1.5 & \text{if } 10,000 \leq I_m < 15,000 \\
-0.5 & \text{if } I_m \geq 15,000
+3.0 & \text{if } I_w < $1,275 \\
+1.5 & \text{if } $1,275 \leq I_w < $1,600 \\
+0.5 & \text{if } I_w \geq 1,600
 \end{cases}$$
 
-**What It Measures:** How stressed a caregiver becomes based on monthly family income (financial security).
+**What It Measures:** How stressed a caregiver becomes based on weekly family income (financial security).
 
 **Why It Matters:** Financial strain is a major stressor for caregivers. Many cut work hours to provide care, reducing income. Others face medical bills, home modifications, or lost opportunities for earning.
 
 **Explanation:**
-- **Less than $10k/month (Stress = 3.0):** Financial crisis. The family is struggling to meet basic needs. Very high stress.
-- **$10k-$15k/month (Stress = 1.5):** Moderate financial strain. They can pay bills but with difficulty. Some stress but manageable.
-- **$15k+/month (Stress = 0.5):** Financially stable. The family has cushion for unexpected expenses. Low financial stress.
+- **Less than $1,275k/week (Stress = 3.0):** Financial crisis. The family is struggling to meet basic needs. Very high stress.
+- **$1.275k-$1.6k/week (Stress = 1.5):** Moderate financial strain. They can pay bills but with difficulty. Some stress but manageable.
+- **$1.6k+/week (Stress = 0.5):** Financially stable. The family has cushion for unexpected expenses. Low financial stress.
 
-**Real-world context:** Many caregivers leave their jobs (reducing income) to care for parents/spouses. $10k/month is roughly minimum wage for one person, making caregiving families financially vulnerable.
+**Real-world context:** Many caregivers leave their jobs (reducing income) to care for parents/spouses. $1,275/week is roughly the average wage for one person, making caregiving families financially vulnerable.
 
 **Implemented in AnyLogic:**
 - **Function:** `calculateStressLevels()`
@@ -62,9 +62,9 @@ $$S_F = \begin{cases}
 ### Equation 1.3: Sleep Quality Stress Component
 
 $$S_S = \begin{cases}
-3.0 & \text{if } S_h < 4 \\
-1.5 & \text{if } 4 \leq S_h < 5 \\
-0.5 & \text{if } S_h \geq 5
+3.0 & \text{if } S_h < 5 \\
+1.5 & \text{if } 5 \leq S_h < 6 \\
+0.5 & \text{if } S_h \geq 6
 \end{cases}$$
 
 **What It Measures:** How stressed a caregiver becomes based on hours of sleep per night.
@@ -72,9 +72,9 @@ $$S_S = \begin{cases}
 **Why It Matters:** Sleep deprivation is a critical stressor. Dementia patients often have disrupted sleep, waking at night, which forces caregivers to be vigilant (checking on patient, responding to needs). Poor sleep affects immune function, mood, and ability to cope.
 
 **Explanation:**
-- **Less than 4 hours/night (Stress = 3.0):** Severe sleep deprivation. The caregiver is exhausted, which impairs judgment and increases vulnerability to illness. Critical stress level.
-- **4-5 hours/night (Stress = 1.5):** Moderate sleep deficit. Below recommended 7-9 hours, causing fatigue and mood issues.
-- **5+ hours/night (Stress = 0.5):** Acceptable sleep. Allows recovery and resilience. Low stress.
+- **Less than 5 hours/night (Stress = 3.0):** Severe sleep deprivation. The caregiver is exhausted, which impairs judgment and increases vulnerability to illness. Critical stress level.
+- **5-6 hours/night (Stress = 1.5):** Moderate sleep deficit. Below recommended 7-9 hours, causing fatigue and mood issues.
+- **6+ hours/night (Stress = 0.5):** Acceptable sleep. Allows recovery and resilience. Low stress.
 
 **Real-world context:** Many dementia caregivers average 4-5 hours per night due to patients waking, wandering, or having sundowning episodes.
 
@@ -497,4 +497,4 @@ What it supports:
 
 - Caregivers at breaking point - burnout, financial strain
 
-**Last Updated:** October 28, 2025
+**Last Updated:** Novemebr 1, 2025
