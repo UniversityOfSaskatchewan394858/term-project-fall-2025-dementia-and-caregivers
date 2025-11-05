@@ -15,7 +15,8 @@ This file also includes our next big step (Section 4), which is planning the **D
 ### Equation 1.1: Workload Stress Component
 
 $$S_W = \begin{cases}
-0.5 & \text{if } H_p < 25 \\
+0.0 & \text{if }  H_p < 10 \\
+0.5 & \text{if } 10 \leq H_p < 25 \\
 1.5 & \text{if } 25 \leq H_p < 30 \\
 3.0 & \text{if } H_p \geq 30
 \end{cases}$$
