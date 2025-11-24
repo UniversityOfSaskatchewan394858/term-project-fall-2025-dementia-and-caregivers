@@ -183,7 +183,11 @@
 				<ItemName>1762243602117</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
-		<Parameters/>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[TimeSpenAtAdultDayCare]]></Name>
+			</Parameter>
+		</Parameters>
 		<ReplicationFlag>true</ReplicationFlag>
 		<Replication Class="CodeValue">
 			<Code><![CDATA[countAdultDayCareCenters]]></Code>
