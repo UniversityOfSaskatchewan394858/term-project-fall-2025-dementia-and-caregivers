@@ -128,6 +128,28 @@
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1763960208634</Id>
+		<Name><![CDATA[EnrolledInAdultDayCare]]></Name>
+		<X>-410</X>
+		<Y>290</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[boolean]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[false]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 	<Variable Class="Parameter">
 		<Id>1761804053569</Id>
 		<Name><![CDATA[careNeedHoursPerWeek]]></Name>
