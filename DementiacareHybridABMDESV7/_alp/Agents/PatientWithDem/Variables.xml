@@ -90,8 +90,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1762246136305</Id>
 		<Name><![CDATA[nearestAdultDayCareCenter]]></Name>
-		<X>240</X>
-		<Y>440</Y>
+		<X>-410</X>
+		<Y>290</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -111,28 +111,6 @@
 		<Name><![CDATA[inAdultDayCare]]></Name>
 		<X>-410</X>
 		<Y>260</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[boolean]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[false]]></Code>
-			</InitialValue>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1763960208634</Id>
-		<Name><![CDATA[EnrolledInAdultDayCare]]></Name>
-		<X>-410</X>
-		<Y>290</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
