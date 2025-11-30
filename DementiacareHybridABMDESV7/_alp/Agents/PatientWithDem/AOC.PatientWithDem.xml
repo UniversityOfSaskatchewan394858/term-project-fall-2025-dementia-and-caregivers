@@ -159,7 +159,7 @@
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="140" Height="40">
-				<EntryAction>traceln(purple, "***********\n***********\n**********\nEntered Adult Day Care\n***********\n***********\n***********");
+				<EntryAction>traceln(purple, "***********\n***********\n**********\nEntered Adult Day Care | Care hours: " + adultDayCareHoursThisWeek + "\n***********\n***********\n***********");
 </EntryAction>
 				<FillColor/>
 			</Properties>
@@ -346,7 +346,7 @@
 			</Points>
 			<IconOffset>50.0</IconOffset>
 			<Properties Source="1762241833862" Target="1762241839734" Trigger="condition">
-				<Action>nearestAdultDayCareCenter.EnterAdultDayCare.take(this); </Action>
+				<Action>nearestAdultDayCareCenter.EnterAdultDayCare.take(this);</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">WEEK</Unit>
@@ -356,7 +356,8 @@
 					<Code><![CDATA[0.75]]></Code>
 					<Unit Class="RateUnits">PER_WEEK</Unit>
 				</Rate>
-				<Guard>AdultDayCareEnrollmentStatusStatechart.isStateActive(Enrolled);</Guard>
+				<Guard>AdultDayCareEnrollmentStatusStatechart.isStateActive(Enrolled) &amp;&amp;
+getHourOfDay() == 8;</Guard>
 				<MessageType>Object</MessageType>
 				<DefaultTransition>true</DefaultTransition>
 				<FilterType>unconditionally</FilterType>

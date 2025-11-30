@@ -748,6 +748,9 @@
 				<ClassName>Enter</ClassName>
 				<ItemName>1412336242933</ItemName>
 			</GenericParameterSubstituteReference>
+			<GenericParameterSubstituteValue Class="CodeValue">
+				<Code><![CDATA[PatientWithDem]]></Code>
+			</GenericParameterSubstituteValue>
 		</GenericParameterSubstitute>
 		<Parameters>
 			<Parameter>
@@ -812,6 +815,9 @@
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onEnter]]></Name>
+				<Value Class="CodeValue">
+					<Code><![CDATA[agent.caregiver.inService = true;]]></Code>
+				</Value>
 			</Parameter>
 			<Parameter>
 				<Name><![CDATA[onRemove]]></Name>
@@ -870,7 +876,9 @@
 			<Parameter>
 				<Name><![CDATA[onExit]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[self.send(DepartedAdultDayCareCenter, agent);]]></Code>
+					<Code><![CDATA[agent.adultDayCareHoursThisWeek += TimeSpenAtAdultDayCare;
+agent.caregiver.inService = false;
+self.send(DepartedAdultDayCareCenter, agent);]]></Code>
 				</Value>
 			</Parameter>
 		</Parameters>
@@ -927,8 +935,8 @@
 			<Parameter>
 				<Name><![CDATA[delayTime]]></Name>
 				<Value Class="CodeUnitValue">
-					<Code><![CDATA[2]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
+					<Code><![CDATA[TimeSpenAtAdultDayCare]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
 				</Value>
 			</Parameter>
 			<Parameter>
