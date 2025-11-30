@@ -116,7 +116,7 @@
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1761809440342</Id>
 			<Name><![CDATA[SevereDementia]]></Name>
-			<X>500</X>
+			<X>480</X>
 			<Y>120</Y>
 			<Label>
 				<X>20</X>
@@ -150,7 +150,7 @@
 			<Id>1762241839734</Id>
 			<Name><![CDATA[AtAdultDayCareCenter]]></Name>
 			<X>110</X>
-			<Y>500</Y>
+			<Y>460</Y>
 			<Label>
 				<X>5</X>
 				<Y>15</Y>
@@ -159,8 +159,6 @@
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="140" Height="40">
-				<EntryAction>traceln(purple, "***********\n***********\n**********\nEntered Adult Day Care | Care hours: " + adultDayCareHoursThisWeek + "\n***********\n***********\n***********");
-</EntryAction>
 				<FillColor/>
 			</Properties>
 		</StatechartElement>
@@ -184,8 +182,8 @@
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1763960090228</Id>
 			<Name><![CDATA[Enrolled]]></Name>
-			<X>420</X>
-			<Y>520</Y>
+			<X>430</X>
+			<Y>490</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
@@ -193,9 +191,7 @@
 			<PublicFlag>false</PublicFlag>
 			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
-			<Properties Width="110" Height="30">
-				<EntryAction>traceln(green, "***********\n***********\n**********\nPatient Entered Enrolled State\n***********\n***********\n***********");
-</EntryAction>
+			<Properties Width="100" Height="30">
 				<FillColor/>
 			</Properties>
 		</StatechartElement>
@@ -219,7 +215,7 @@
 			<Id>1764457284872</Id>
 			<Name><![CDATA[Enrolling]]></Name>
 			<X>430</X>
-			<Y>430</Y>
+			<Y>420</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
@@ -258,12 +254,12 @@
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1761809447357</Id>
-			<Name><![CDATA[changeofDemStage1]]></Name>
+			<Name><![CDATA[changeDemStageToSevere]]></Name>
 			<X>395.021</X>
 			<Y>142.773</Y>
 			<Label>
-				<X>-15</X>
-				<Y>-30</Y>
+				<X>-5.021</X>
+				<Y>-27.773</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
 			<PresentationFlag>true</PresentationFlag>
@@ -274,7 +270,7 @@
 					<Y>0</Y>
 				</Point>
 				<Point>
-					<X>104.97899999999998</X>
+					<X>84.97899999999998</X>
 					<Y>0</Y>
 				</Point>
 			</Points>
@@ -328,8 +324,8 @@
 			<X>210</X>
 			<Y>390</Y>
 			<Label>
-				<X>10</X>
-				<Y>45</Y>
+				<X>5</X>
+				<Y>30</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
 			<PresentationFlag>true</PresentationFlag>
@@ -341,23 +337,24 @@
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>110</Y>
+					<Y>70</Y>
 				</Point>
 			</Points>
-			<IconOffset>50.0</IconOffset>
+			<IconOffset>40.0</IconOffset>
 			<Properties Source="1762241833862" Target="1762241839734" Trigger="condition">
 				<Action>nearestAdultDayCareCenter.EnterAdultDayCare.take(this);</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">WEEK</Unit>
 				</Timeout>
-				<Condition>caregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
+				<Condition>caregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || 
+DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[0.75]]></Code>
 					<Unit Class="RateUnits">PER_WEEK</Unit>
 				</Rate>
-				<Guard>AdultDayCareEnrollmentStatusStatechart.isStateActive(Enrolled) &amp;&amp;
-getHourOfDay() == 8;</Guard>
+				<Guard>AdultDayCareEnrollmentStatusStatechart.isStateActive(Enrolled)&amp;&amp;
+currentTime == 8;</Guard>
 				<MessageType>Object</MessageType>
 				<DefaultTransition>true</DefaultTransition>
 				<FilterType>unconditionally</FilterType>
@@ -369,10 +366,10 @@ getHourOfDay() == 8;</Guard>
 			<Id>1762241985421</Id>
 			<Name><![CDATA[ReturnHome]]></Name>
 			<X>140</X>
-			<Y>500</Y>
+			<Y>460</Y>
 			<Label>
-				<X>-85</X>
-				<Y>-50</Y>
+				<X>-80</X>
+				<Y>-40</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
 			<PresentationFlag>true</PresentationFlag>
@@ -384,10 +381,10 @@ getHourOfDay() == 8;</Guard>
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>-110</Y>
+					<Y>-70</Y>
 				</Point>
 			</Points>
-			<IconOffset>50.0</IconOffset>
+			<IconOffset>30.0</IconOffset>
 			<Properties Source="1762241839734" Target="1762241833862" Trigger="message">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
@@ -407,11 +404,11 @@ getHourOfDay() == 8;</Guard>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1762312031195</Id>
-			<Name><![CDATA[changeofDemStage]]></Name>
+			<Name><![CDATA[changeDemStageToModerate]]></Name>
 			<X>166</X>
 			<Y>140</Y>
 			<Label>
-				<X>-15</X>
+				<X>-26</X>
 				<Y>-30</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
@@ -488,7 +485,7 @@ getHourOfDay() == 8;</Guard>
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>50</Y>
+					<Y>40</Y>
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
@@ -512,9 +509,9 @@ getHourOfDay() == 8;</Guard>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1764457298515</Id>
-			<Name><![CDATA[transition1]]></Name>
+			<Name><![CDATA[EnrolledMessageTransition]]></Name>
 			<X>460</X>
-			<Y>460</Y>
+			<Y>450</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
@@ -529,7 +526,7 @@ getHourOfDay() == 8;</Guard>
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>60</Y>
+					<Y>40</Y>
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
@@ -547,6 +544,49 @@ getHourOfDay() == 8;</Guard>
 				<DefaultTransition>true</DefaultTransition>
 				<FilterType>equalsTo</FilterType>
 				<EqualsExpression>EnrolledInAdultDayCare</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition"
+                     ParentState="AtPatientsHome"
+                     ParentStateId="1762241833862">
+			<Id>1764467896127</Id>
+			<Name><![CDATA[transition2]]></Name>
+			<X>230</X>
+			<Y>390</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>10</X>
+					<Y>-40</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1762241833862" Target="1762241833862" Trigger="timeout">
+				<Action>currentTime = getHourOfDay()</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
 				<SatisfiesExpression>true</SatisfiesExpression>
 			</Properties>
 		</StatechartElement>
