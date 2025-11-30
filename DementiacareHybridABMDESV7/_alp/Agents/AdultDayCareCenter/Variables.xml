@@ -3,21 +3,21 @@
 	<Variable Class="Parameter">
 		<Id>1763961232571</Id>
 		<Name><![CDATA[TimeSpenAtAdultDayCare]]></Name>
-		<X>-150</X>
+		<X>-160</X>
 		<Y>50</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-			<Type><![CDATA[int]]></Type>
+			<Type><![CDATA[double]]></Type>
 			<UnitType>NONE</UnitType>
 			<SdArray>false</SdArray>
 			<DefaultValue Class="CodeValue">
-				<Code><![CDATA[2]]></Code>
+				<Code><![CDATA[8]]></Code>
 			</DefaultValue>
 			<ParameterEditor>
 				<Id>1763961232569</Id>

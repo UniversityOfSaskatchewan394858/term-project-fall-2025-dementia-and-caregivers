@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ModelResources>
 	<Resource>
-		<Id>1761851174131</Id>
-		<Path>3d/nurse.dae</Path>
-		<ReferencedFromUserCode>false</ReferencedFromUserCode>
-		<Location>FILE_SYSTEM</Location>
-	</Resource>
-	<Resource>
-		<Id>1763927620512</Id>
+		<Id>1764457881491</Id>
 		<Path>simulation_data.xlsx</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>

@@ -116,7 +116,7 @@
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1761809440342</Id>
 			<Name><![CDATA[SevereDementia]]></Name>
-			<X>500</X>
+			<X>480</X>
 			<Y>120</Y>
 			<Label>
 				<X>20</X>
@@ -140,9 +140,9 @@
 				<Y>15</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
+			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
-			<Properties Width="140" Height="50">
+			<Properties Width="140" Height="40">
 				<FillColor/>
 			</Properties>
 		</StatechartElement>
@@ -150,35 +150,15 @@
 			<Id>1762241839734</Id>
 			<Name><![CDATA[AtAdultDayCareCenter]]></Name>
 			<X>110</X>
-			<Y>710</Y>
+			<Y>460</Y>
 			<Label>
 				<X>5</X>
 				<Y>15</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
+			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
-			<Properties Width="140" Height="50">
-				<EntryAction>traceln("***********\n***********\n**********\nEntered Adult Day Care\n***********\n***********\n***********");
-</EntryAction>
-				<FillColor/>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1762243253619</Id>
-			<Name><![CDATA[InTransitionToAdultDayCareCenter]]></Name>
-			<X>180</X>
-			<Y>590</Y>
-			<Label>
-				<X>10</X>
-				<Y>10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="210" Height="40">
-				<EntryAction>traceln("***********\n***********\n**********\nEntered Transition State\n***********\n***********\n***********");
-</EntryAction>
+			<Properties Width="140" Height="40">
 				<FillColor/>
 			</Properties>
 		</StatechartElement>
@@ -199,33 +179,52 @@
 				<FillColor/>
 			</Properties>
 		</StatechartElement>
-		<StatechartElement Class="Branch" ParentState="ROOT_NODE">
-			<Id>1763960058069</Id>
-			<Name><![CDATA[branch]]></Name>
-			<X>210</X>
-			<Y>450</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Properties/>
-		</StatechartElement>
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1763960090228</Id>
-			<Name><![CDATA[EnrollingForAdultDayCare]]></Name>
-			<X>240</X>
-			<Y>500</Y>
+			<Name><![CDATA[Enrolled]]></Name>
+			<X>430</X>
+			<Y>490</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
+			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
-			<Properties Width="160" Height="30">
+			<Properties Width="100" Height="30">
+				<FillColor/>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1764457280326</Id>
+			<Name><![CDATA[NotEnrolled]]></Name>
+			<X>430</X>
+			<Y>350</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<FillColor/>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1764457284872</Id>
+			<Name><![CDATA[Enrolling]]></Name>
+			<X>430</X>
+			<Y>420</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<EntryAction>nearestAdultDayCareCenter.EnterEnrollmentQueue.take(this); </EntryAction>
 				<FillColor/>
 			</Properties>
 		</StatechartElement>
@@ -255,12 +254,12 @@
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1761809447357</Id>
-			<Name><![CDATA[changeofDemStage1]]></Name>
+			<Name><![CDATA[changeDemStageToSevere]]></Name>
 			<X>395.021</X>
 			<Y>142.773</Y>
 			<Label>
-				<X>-15</X>
-				<Y>-30</Y>
+				<X>-5.021</X>
+				<Y>-27.773</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
 			<PresentationFlag>true</PresentationFlag>
@@ -271,7 +270,7 @@
 					<Y>0</Y>
 				</Point>
 				<Point>
-					<X>104.97899999999998</X>
+					<X>84.97899999999998</X>
 					<Y>0</Y>
 				</Point>
 			</Points>
@@ -295,7 +294,7 @@
 		</StatechartElement>
 		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
 			<Id>1762241808856</Id>
-			<Name><![CDATA[PatientLocationStateChart]]></Name>
+			<Name><![CDATA[PatientLocationStatechart]]></Name>
 			<X>150</X>
 			<Y>290</Y>
 			<Label>
@@ -303,7 +302,7 @@
 				<Y>0</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
+			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Points>
 				<Point>
@@ -321,15 +320,15 @@
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1762241980457</Id>
-			<Name><![CDATA[StartTransitionToAdultDayCareCenter]]></Name>
+			<Name><![CDATA[TransitionToAdultDayCareCenter]]></Name>
 			<X>210</X>
-			<Y>400</Y>
+			<Y>390</Y>
 			<Label>
 				<X>5</X>
-				<Y>15</Y>
+				<Y>30</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
+			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Points>
 				<Point>
@@ -338,21 +337,24 @@
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>40</Y>
+					<Y>70</Y>
 				</Point>
 			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1762241833862" Target="1763960058069" Trigger="condition">
-				<Action>nearestAdultDayCareCenter = getNearestAgent(main.adultDayCareCenters);</Action>
+			<IconOffset>40.0</IconOffset>
+			<Properties Source="1762241833862" Target="1762241839734" Trigger="condition">
+				<Action>nearestAdultDayCareCenter.EnterAdultDayCare.take(this);</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">WEEK</Unit>
 				</Timeout>
-				<Condition>caregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
+				<Condition>caregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || 
+DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[0.75]]></Code>
 					<Unit Class="RateUnits">PER_WEEK</Unit>
 				</Rate>
+				<Guard>AdultDayCareEnrollmentStatusStatechart.isStateActive(Enrolled)&amp;&amp;
+currentTime == 8;</Guard>
 				<MessageType>Object</MessageType>
 				<DefaultTransition>true</DefaultTransition>
 				<FilterType>unconditionally</FilterType>
@@ -364,13 +366,13 @@
 			<Id>1762241985421</Id>
 			<Name><![CDATA[ReturnHome]]></Name>
 			<X>140</X>
-			<Y>710</Y>
+			<Y>460</Y>
 			<Label>
 				<X>-80</X>
-				<Y>-80</Y>
+				<Y>-40</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
+			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Points>
 				<Point>
@@ -379,15 +381,11 @@
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>-310</Y>
+					<Y>-70</Y>
 				</Point>
 			</Points>
-			<IconOffset>50.0</IconOffset>
+			<IconOffset>30.0</IconOffset>
 			<Properties Source="1762241839734" Target="1762241833862" Trigger="message">
-				<Action>traceln("Patient Leaving Adult Day Care");
-moveTo(home.getX()-5, home.getY());
-caregiver.inService = false;
-caregiver.stressLevel = 1;</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">WEEK</Unit>
@@ -405,56 +403,12 @@ caregiver.stressLevel = 1;</Action>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1762245382925</Id>
-			<Name><![CDATA[ArrivingToAdultDayCare]]></Name>
-			<X>210</X>
-			<Y>630</Y>
-			<Label>
-				<X>10</X>
-				<Y>40</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>80</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1762243253619" Target="1762241839734" Trigger="arrival">
-				<Action>traceln("***********\n***********\n**********\nPatient Arriving to Adult Day Care\n***********\n***********\n***********");
-moveTo(nearestAdultDayCareCenter.getX(), nearestAdultDayCareCenter.getY());
-nearestAdultDayCareCenter.EnterAdultDayCare.take(this); 
-caregiver.inService = true;</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1762312031195</Id>
-			<Name><![CDATA[changeofDemStage]]></Name>
+			<Name><![CDATA[changeDemStageToModerate]]></Name>
 			<X>166</X>
 			<Y>140</Y>
 			<Label>
-				<X>-15</X>
+				<X>-26</X>
 				<Y>-30</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
@@ -488,17 +442,41 @@ caregiver.inService = true;</Action>
 				<SatisfiesExpression>true</SatisfiesExpression>
 			</Properties>
 		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1763960076901</Id>
-			<Name><![CDATA[transition2]]></Name>
-			<X>210</X>
-			<Y>460</Y>
+		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
+			<Id>1764457225193</Id>
+			<Name><![CDATA[AdultDayCareEnrollmentStatusStatechart]]></Name>
+			<X>460</X>
+			<Y>280</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>70</Y>
+				</Point>
+			</Points>
+			<Properties Target="1764457280326"/>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1764457291080</Id>
+			<Name><![CDATA[transition]]></Name>
+			<X>460</X>
+			<Y>380</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>false</ShowLabel>
 			<Points>
 				<Point>
@@ -507,80 +485,39 @@ caregiver.inService = true;</Action>
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>130</Y>
+					<Y>40</Y>
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
-			<Properties Source="1763960058069" Target="1762243253619" Trigger="timeout">
+			<Properties Source="1764457280326" Target="1764457284872" Trigger="condition">
+				<Action>nearestAdultDayCareCenter = getNearestAgent(main.adultDayCareCenters);</Action>
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">WEEK</Unit>
 				</Timeout>
-				<Condition>EnrolledInAdultDayCare</Condition>
+				<Condition>caregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_WEEK</Unit>
 				</Rate>
 				<MessageType>Object</MessageType>
-				<DefaultTransition>false</DefaultTransition>
+				<DefaultTransition>true</DefaultTransition>
 				<FilterType>unconditionally</FilterType>
 				<EqualsExpression>"text"</EqualsExpression>
 				<SatisfiesExpression>true</SatisfiesExpression>
 			</Properties>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1763960082981</Id>
-			<Name><![CDATA[transition3]]></Name>
-			<X>222</X>
+			<Id>1764457298515</Id>
+			<Name><![CDATA[EnrolledMessageTransition]]></Name>
+			<X>460</X>
 			<Y>450</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>68</X>
-					<Y>50</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1763960058069" Target="1763960090228" Trigger="timeout">
-				<Action>nearestAdultDayCareCenter.EnterEnrollmentQueue.take(this); 
-traceln("Patient Enrolling for Adult Day Care");</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>!EnrolledInAdultDayCare</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>false</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1763960309828</Id>
-			<Name><![CDATA[transition4]]></Name>
-			<X>290</X>
-			<Y>530</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
+			<PresentationFlag>true</PresentationFlag>
 			<ShowLabel>false</ShowLabel>
 			<Points>
 				<Point>
@@ -589,12 +526,11 @@ traceln("Patient Enrolling for Adult Day Care");</Action>
 				</Point>
 				<Point>
 					<X>0</X>
-					<Y>60</Y>
+					<Y>40</Y>
 				</Point>
 			</Points>
 			<IconOffset>20.0</IconOffset>
-			<Properties Source="1763960090228" Target="1762243253619" Trigger="message">
-				<Action>traceln(green, "***********\n***********\n**********\nRecieved Message\n***********\n***********\n***********");</Action>
+			<Properties Source="1764457284872" Target="1763960090228" Trigger="message">
 				<Timeout Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">WEEK</Unit>
@@ -606,9 +542,52 @@ traceln("Patient Enrolling for Adult Day Care");</Action>
 				</Rate>
 				<MessageType>Object</MessageType>
 				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
+				<FilterType>equalsTo</FilterType>
 				<EqualsExpression>EnrolledInAdultDayCare</EqualsExpression>
-				<SatisfiesExpression> true;</SatisfiesExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition"
+                     ParentState="AtPatientsHome"
+                     ParentStateId="1762241833862">
+			<Id>1764467896127</Id>
+			<Name><![CDATA[transition2]]></Name>
+			<X>230</X>
+			<Y>390</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>10</X>
+					<Y>-40</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1762241833862" Target="1762241833862" Trigger="timeout">
+				<Action>currentTime = getHourOfDay()</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
 			</Properties>
 		</StatechartElement>
 	</StatechartElements>
@@ -639,7 +618,12 @@ traceln("Patient Enrolling for Adult Day Care");</Action>
 			<StatechartReference>
 				<PackageName>dementiacarehybridabmdesv3</PackageName>
 				<ClassName>PatientWithDem</ClassName>
-				<ItemName>PatientLocationStateChart</ItemName>
+				<ItemName>PatientLocationStatechart</ItemName>
+			</StatechartReference>
+			<StatechartReference>
+				<PackageName>dementiacarehybridabmdesv3</PackageName>
+				<ClassName>PatientWithDem</ClassName>
+				<ItemName>AdultDayCareEnrollmentStatusStatechart</ItemName>
 			</StatechartReference>
 			<DrawLine>true</DrawLine>
 			<LineStyle>SOLID</LineStyle>

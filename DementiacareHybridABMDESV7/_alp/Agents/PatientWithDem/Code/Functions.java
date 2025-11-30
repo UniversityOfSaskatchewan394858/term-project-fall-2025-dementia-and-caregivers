@@ -65,6 +65,7 @@ double getCareNeedsHoursPerWeek()
     double baseNeed = 4 * (1.0 - healthStatus) * 16;
     careNeedHoursPerWeek = Math.min(baseNeed, maxCareNeeds);
     careNeedHoursPerWeek = Math.max(10.0, careNeedHoursPerWeek);
+    careNeedHoursPerWeek = Math.max(0, careNeedHoursPerWeek - adultDayCareHoursThisWeek);
     
     
     return careNeedHoursPerWeek;
