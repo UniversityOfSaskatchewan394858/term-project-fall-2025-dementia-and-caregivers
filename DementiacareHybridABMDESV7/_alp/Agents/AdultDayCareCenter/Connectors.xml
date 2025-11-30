@@ -46,8 +46,8 @@
 	<Connector>
 		<Id>1763960569308</Id>
 		<Name><![CDATA[connector5]]></Name>
-		<X>200</X>
-		<Y>430</Y>
+		<X>210</X>
+		<Y>400</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -68,11 +68,11 @@
 		<TargetEmbeddedObjectReference>
 			<PackageName>dementiacarehybridabmdesv3</PackageName>
 			<ClassName>AdultDayCareCenter</ClassName>
-			<ItemName>TimeSpentAtAdultDayCare</ItemName>
+			<ItemName>moveToAdultDayCareCenter</ItemName>
 		</TargetEmbeddedObjectReference>
 		<TargetConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Delay</ClassName>
+			<ClassName>MoveTo</ClassName>
 			<ItemName>in</ItemName>
 		</TargetConnectableItemReference>
 		<Points>
@@ -81,7 +81,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>160</X>
+				<X>70</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -89,8 +89,8 @@
 	<Connector>
 		<Id>1763960569316</Id>
 		<Name><![CDATA[connector9]]></Name>
-		<X>510</X>
-		<Y>430</Y>
+		<X>540</X>
+		<Y>400</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -101,11 +101,11 @@
 		<SourceEmbeddedObjectReference>
 			<PackageName>dementiacarehybridabmdesv3</PackageName>
 			<ClassName>AdultDayCareCenter</ClassName>
-			<ItemName>DepartureAdultDayCare</ItemName>
+			<ItemName>moveToHome</ItemName>
 		</SourceEmbeddedObjectReference>
 		<SourceConnectableItemReference>
 			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
-			<ClassName>Exit</ClassName>
+			<ClassName>MoveTo</ClassName>
 			<ItemName>in</ItemName>
 		</SourceConnectableItemReference>
 		<TargetEmbeddedObjectReference>
@@ -124,7 +124,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>-110</X>
+				<X>-80</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -132,8 +132,8 @@
 	<Connector>
 		<Id>1763961081914</Id>
 		<Name><![CDATA[connector]]></Name>
-		<X>200</X>
-		<Y>300</Y>
+		<X>210</X>
+		<Y>180</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -167,7 +167,7 @@
 				<Y>0</Y>
 			</Point>
 			<Point>
-				<X>160</X>
+				<X>150</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
@@ -176,7 +176,7 @@
 		<Id>1763961085180</Id>
 		<Name><![CDATA[connector3]]></Name>
 		<X>400</X>
-		<Y>300</Y>
+		<Y>180</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -254,6 +254,92 @@
 			</Point>
 			<Point>
 				<X>-110</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1764458939034</Id>
+		<Name><![CDATA[connector2]]></Name>
+		<X>320</X>
+		<Y>400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>dementiacarehybridabmdesv3</PackageName>
+			<ClassName>AdultDayCareCenter</ClassName>
+			<ItemName>moveToAdultDayCareCenter</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>MoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>dementiacarehybridabmdesv3</PackageName>
+			<ClassName>AdultDayCareCenter</ClassName>
+			<ItemName>TimeSpentAtAdultDayCare</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Delay</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>100</X>
+				<Y>0</Y>
+			</Point>
+		</Points>
+	</Connector>
+	<Connector>
+		<Id>1764459463201</Id>
+		<Name><![CDATA[connector6]]></Name>
+		<X>580</X>
+		<Y>400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<SourceEmbeddedObjectReference>
+			<PackageName>dementiacarehybridabmdesv3</PackageName>
+			<ClassName>AdultDayCareCenter</ClassName>
+			<ItemName>moveToHome</ItemName>
+		</SourceEmbeddedObjectReference>
+		<SourceConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>MoveTo</ClassName>
+			<ItemName>out</ItemName>
+		</SourceConnectableItemReference>
+		<TargetEmbeddedObjectReference>
+			<PackageName>dementiacarehybridabmdesv3</PackageName>
+			<ClassName>AdultDayCareCenter</ClassName>
+			<ItemName>DepartureAdultDayCare</ItemName>
+		</TargetEmbeddedObjectReference>
+		<TargetConnectableItemReference>
+			<PackageName>com.anylogic.libraries.processmodeling</PackageName>
+			<ClassName>Exit</ClassName>
+			<ItemName>in</ItemName>
+		</TargetConnectableItemReference>
+		<Points>
+			<Point>
+				<X>0</X>
+				<Y>0</Y>
+			</Point>
+			<Point>
+				<X>90</X>
 				<Y>0</Y>
 			</Point>
 		</Points>
