@@ -37,7 +37,8 @@
               StaticVariable="false">
 			<Type><![CDATA[double]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[0.005;  // 0.5% per week (2.5x faster)
+				<Code><![CDATA[main.dementiaProgressionRate;
+ // 0.5% per week (2.5x faster)
 //0.002 + (uniform(0, 0.001)); 
 // 0.002-0.003 per week = ~3-5 years total progression]]></Code>
 			</InitialValue>

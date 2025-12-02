@@ -194,7 +194,7 @@
               StaticVariable="false">
 			<Type><![CDATA[double]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[0.0]]></Code>
+				<Code><![CDATA[uniform(800, 1500);]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
