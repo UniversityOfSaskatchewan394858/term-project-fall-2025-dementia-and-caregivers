@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Events>
+	<Event>
+		<Id>1763768351391</Id>
+		<Name><![CDATA[WeeklyStressUpdate]]></Name>
+		<X>-390</X>
+		<Y>280</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties TriggerType="rate" Mode="cyclic">
+			<Timeout Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="TimeUnits">WEEK</Unit>
+			</Timeout>
+			<Rate Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="RateUnits">PER_WEEK</Unit>
+			</Rate>
+			<Id>1763768351389</Id>
+			<OccurrenceAtTime>true</OccurrenceAtTime>
+			<OccurrenceDate>1763798400000</OccurrenceDate>
+			<OccurrenceTime Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="TimeUnits">WEEK</Unit>
+			</OccurrenceTime>
+			<RecurrenceCode Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="TimeUnits">WEEK</Unit>
+			</RecurrenceCode>
+			<Condition>false</Condition>
+		</Properties>
+		<Action xmlns:al="http://anylogic.com"/>
+	</Event>
+	<Event>
+		<Id>1763772773258</Id>
+		<Name><![CDATA[ApplyInterventions]]></Name>
+		<X>-390</X>
+		<Y>240</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties TriggerType="rate" Mode="userControls">
+			<Timeout Class="CodeUnitValue">
+				<Code><![CDATA[interventionStartWeek]]></Code>
+				<Unit Class="TimeUnits">WEEK</Unit>
+			</Timeout>
+			<Rate Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="RateUnits">PER_WEEK</Unit>
+			</Rate>
+			<Id>1763772773256</Id>
+			<OccurrenceAtTime>true</OccurrenceAtTime>
+			<OccurrenceDate>1763798400000</OccurrenceDate>
+			<OccurrenceTime Class="CodeUnitValue">
+				<Code><![CDATA[0]]></Code>
+				<Unit Class="TimeUnits">WEEK</Unit>
+			</OccurrenceTime>
+			<RecurrenceCode Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="TimeUnits">WEEK</Unit>
+			</RecurrenceCode>
+			<Condition>false</Condition>
+		</Properties>
+		<Action xmlns:al="http://anylogic.com"/>
+	</Event>
+	<Event>
+		<Id>1764260341189</Id>
+		<Name><![CDATA[recordWeeklyData]]></Name>
+		<X>-390</X>
+		<Y>470</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties TriggerType="timeout" Mode="cyclic">
+			<Timeout Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="TimeUnits">WEEK</Unit>
+			</Timeout>
+			<Rate Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="RateUnits">PER_WEEK</Unit>
+			</Rate>
+			<Id>1764260341187</Id>
+			<OccurrenceAtTime>true</OccurrenceAtTime>
+			<OccurrenceDate>1764316800000</OccurrenceDate>
+			<OccurrenceTime Class="CodeUnitValue">
+				<Code><![CDATA[0]]></Code>
+				<Unit Class="TimeUnits">WEEK</Unit>
+			</OccurrenceTime>
+			<RecurrenceCode Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="TimeUnits">WEEK</Unit>
+			</RecurrenceCode>
+			<Condition>false</Condition>
+		</Properties>
+		<Action xmlns:al="http://anylogic.com"/>
+	</Event>
+</Events>
