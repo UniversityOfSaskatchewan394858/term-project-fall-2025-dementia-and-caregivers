@@ -5,7 +5,7 @@ double progressDisease()
     
     // Calculate weekly decline (diseaseProgressionRate is ALREADY percentage like 0.002 = 0.2%)
     // careQuality reduces decline (0.5 factor means perfect care cuts decline in half)
-    double weeklyDecline = this.diseaseProgressionRate * (1.0 - careQuality * 0.5);
+    double weeklyDecline = this.diseaseProgressionRate * (1.0 - careQuality * 0.3);
     
     // Stops progression at severe stage
     double minimumHealth = 0.05;  // Never go below 5% (severe but still tracking)

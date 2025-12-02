@@ -80,30 +80,41 @@ double sleepQualityCalculation()
 
 double weeklyIncomeCalculation()
 {/*ALCODESTART::1763748887573*/
-// INPUT: familyWeeklyIncome (could be $0-$3000+)
-    // OUTPUT: financialStress (will be 0.0, 0.5, 1.5, or 3.0)
+
+    // INPUT: familyWeeklyIncome (could be $0–$3000+)
+    // OUTPUT: financialStress (will be 0.0–2.0)
     
-    if (familyWeeklyIncome >= 1900) {
-    financialStress = 0.0;
-} else if (familyWeeklyIncome >= 1300) {
-    financialStress = 0.5;
-} else if (familyWeeklyIncome >= 900) {
-    financialStress = 1.0;
-} else if (familyWeeklyIncome >= 700) {
-    financialStress = 1.5;
-} else if (familyWeeklyIncome >= 500) {
-    financialStress = 2.0;
-} else {
-    financialStress = 3.0;
-}
-double incomeThisWeek = familyWeeklyIncome;
+    double baseCost = 1500.0;  // Realistic weekly expenses for dementia care household
+    
+    double incomeThisWeek = familyWeeklyIncome;
     
     // Add stipend if enabled
     if (main.enableStipend) {
-        incomeThisWeek += main.stipendAmount;
+        incomeThisWeek += main.stipendAmount;  // e.g., +$200/week
+    }
+    
+    // Calculate income ratio (buffering effect)
+    double incomeRatio = incomeThisWeek / baseCost; 
+    
+    // Map ratio to financial stress (0–2 scale, bounded)
+    // High income ratio -> low stress
+    // Low income ratio -> high stress
+    if (incomeRatio >= 1.5) {
+        financialStress = 0.0;      // Income well above expenses (~$2250+/week)
+    } else if (incomeRatio >= 1.2) {
+        financialStress = 0.3;      // Comfortable buffer (~$1800/week)
+    } else if (incomeRatio >= 1.0) {
+        financialStress = 0.6;      // Breaking even (~$1500/week)
+    } else if (incomeRatio >= 0.8) {
+        financialStress = 1.0;      // Moderate strain (~$1200/week)
+    } else if (incomeRatio >= 0.6) {
+        financialStress = 1.3;      // High strain (~$900/week)
+    } else if (incomeRatio >= 0.4) {
+        financialStress = 1.7;      // Severe strain (~$600/week)
+    } else {
+        financialStress = 2.0;      // Critical (< $600/week, clamped at 2.0)
     }
 
-  
 /*ALCODEEND*/}
 
 double applyCareQualityDecay()

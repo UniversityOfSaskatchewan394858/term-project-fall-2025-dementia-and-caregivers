@@ -105,7 +105,7 @@
 			<Parameter>
 				<Name><![CDATA[healthStatus]]></Name>
 				<Value Class="CodeValue">
-					<Code><![CDATA[uniform(0.010,0.6)]]></Code>
+					<Code><![CDATA[uniform(0.7,0.9)]]></Code>
 				</Value>
 			</Parameter>
 			<Parameter>
