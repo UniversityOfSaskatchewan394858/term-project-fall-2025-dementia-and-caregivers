@@ -4,7 +4,7 @@
 		<Id>1764259443714</Id>
 		<Name><![CDATA[csvWriter]]></Name>
 		<X>-380</X>
-		<Y>500</Y>
+		<Y>350</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -22,8 +22,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1764550690889</Id>
 		<Name><![CDATA[patientCsvWriter]]></Name>
-		<X>-370</X>
-		<Y>570</Y>
+		<X>-380</X>
+		<Y>410</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -38,13 +38,57 @@
 			<Type><![CDATA[PrintWriter]]></Type>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1764874632484</Id>
+		<Name><![CDATA[frameWidth]]></Name>
+		<X>-380</X>
+		<Y>220</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[int]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[1000]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1764874637469</Id>
+		<Name><![CDATA[frameHeight]]></Name>
+		<X>-380</X>
+		<Y>250</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[int]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[1000]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 	<Variable Class="Parameter">
 		<Id>1761806193380</Id>
 		<Name><![CDATA[enableInterventions]]></Name>
-		<X>-80</X>
-		<Y>240</Y>
+		<X>-60</X>
+		<Y>150</Y>
 		<Label>
-			<X>-120</X>
+			<X>-122</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -69,10 +113,10 @@
 	<Variable Class="Parameter">
 		<Id>1761806213183</Id>
 		<Name><![CDATA[interventionStartWeek]]></Name>
-		<X>-80</X>
-		<Y>270</Y>
+		<X>-60</X>
+		<Y>180</Y>
 		<Label>
-			<X>-135</X>
+			<X>-134</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -97,11 +141,11 @@
 	<Variable Class="Parameter">
 		<Id>1761806233715</Id>
 		<Name><![CDATA[simulationDurationYears]]></Name>
-		<X>-80</X>
-		<Y>300</Y>
+		<X>-60</X>
+		<Y>210</Y>
 		<Label>
-			<X>-150</X>
-			<Y>5</Y>
+			<X>-146</X>
+			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -125,10 +169,10 @@
 	<Variable Class="Parameter">
 		<Id>1762023952877</Id>
 		<Name><![CDATA[patientPopulationSize]]></Name>
-		<X>-80</X>
-		<Y>330</Y>
+		<X>-60</X>
+		<Y>240</Y>
 		<Label>
-			<X>-140</X>
+			<X>-132</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -153,10 +197,10 @@
 	<Variable Class="Parameter">
 		<Id>1762023966159</Id>
 		<Name><![CDATA[caregiverPopulationSize]]></Name>
-		<X>-80</X>
-		<Y>360</Y>
+		<X>-60</X>
+		<Y>270</Y>
 		<Label>
-			<X>-150</X>
+			<X>-144</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -181,10 +225,10 @@
 	<Variable Class="Parameter">
 		<Id>1762244107641</Id>
 		<Name><![CDATA[countAdultDayCareCenters]]></Name>
-		<X>-80</X>
-		<Y>390</Y>
+		<X>-60</X>
+		<Y>300</Y>
 		<Label>
-			<X>-165</X>
+			<X>-162</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -209,10 +253,10 @@
 	<Variable Class="Parameter">
 		<Id>1762244660607</Id>
 		<Name><![CDATA[countHomes]]></Name>
-		<X>-80</X>
-		<Y>460</Y>
+		<X>-60</X>
+		<Y>360</Y>
 		<Label>
-			<X>-90</X>
+			<X>-86</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -237,10 +281,10 @@
 	<Variable Class="Parameter">
 		<Id>1762245984733</Id>
 		<Name><![CDATA[adultDayCareCenterSlots]]></Name>
-		<X>-80</X>
-		<Y>420</Y>
+		<X>-60</X>
+		<Y>330</Y>
 		<Label>
-			<X>-145</X>
+			<X>-148</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -265,10 +309,10 @@
 	<Variable Class="Parameter">
 		<Id>1763842102175</Id>
 		<Name><![CDATA[workloadStressWeight]]></Name>
-		<X>-80</X>
-		<Y>490</Y>
+		<X>-60</X>
+		<Y>390</Y>
 		<Label>
-			<X>-135</X>
+			<X>-134</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -293,10 +337,10 @@
 	<Variable Class="Parameter">
 		<Id>1763842117570</Id>
 		<Name><![CDATA[sleepStressWeight]]></Name>
-		<X>-80</X>
-		<Y>520</Y>
+		<X>-60</X>
+		<Y>420</Y>
 		<Label>
-			<X>-110</X>
+			<X>-112</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -321,10 +365,10 @@
 	<Variable Class="Parameter">
 		<Id>1763842125258</Id>
 		<Name><![CDATA[financialStressWeight]]></Name>
-		<X>-80</X>
-		<Y>550</Y>
+		<X>-60</X>
+		<Y>450</Y>
 		<Label>
-			<X>-125</X>
+			<X>-130</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -349,10 +393,10 @@
 	<Variable Class="Parameter">
 		<Id>1763843067323</Id>
 		<Name><![CDATA[copingSkillsBoostAmount]]></Name>
-		<X>-80</X>
-		<Y>600</Y>
+		<X>-60</X>
+		<Y>480</Y>
 		<Label>
-			<X>-150</X>
+			<X>-154</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -377,10 +421,10 @@
 	<Variable Class="Parameter">
 		<Id>1763843086754</Id>
 		<Name><![CDATA[careQualityDecayRate]]></Name>
-		<X>-80</X>
-		<Y>620</Y>
+		<X>-60</X>
+		<Y>510</Y>
 		<Label>
-			<X>-130</X>
+			<X>-132</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -405,10 +449,10 @@
 	<Variable Class="Parameter">
 		<Id>1764542290825</Id>
 		<Name><![CDATA[enableStipend]]></Name>
-		<X>-80</X>
-		<Y>650</Y>
+		<X>-60</X>
+		<Y>540</Y>
 		<Label>
-			<X>-85</X>
+			<X>-92</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -433,11 +477,11 @@
 	<Variable Class="Parameter">
 		<Id>1764542297909</Id>
 		<Name><![CDATA[stipendAmount]]></Name>
-		<X>-80</X>
-		<Y>670</Y>
+		<X>-60</X>
+		<Y>570</Y>
 		<Label>
-			<X>-95</X>
-			<Y>5</Y>
+			<X>-100</X>
+			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -458,10 +502,10 @@
 	<Variable Class="Parameter">
 		<Id>1764542307479</Id>
 		<Name><![CDATA[dementiaProgressionRate]]></Name>
-		<X>-80</X>
-		<Y>700</Y>
+		<X>-60</X>
+		<Y>600</Y>
 		<Label>
-			<X>-150</X>
+			<X>-152</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>

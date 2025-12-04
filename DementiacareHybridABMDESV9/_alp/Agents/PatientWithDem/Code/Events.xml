@@ -3,10 +3,10 @@
 	<Event>
 		<Id>1761809107999</Id>
 		<Name><![CDATA[WeeklyDiseaseProgression]]></Name>
-		<X>-80</X>
+		<X>-430</X>
 		<Y>40</Y>
 		<Label>
-			<X>-165</X>
+			<X>10</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>

@@ -3,8 +3,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1761809708432</Id>
 		<Name><![CDATA[myCaregiver]]></Name>
-		<X>-410</X>
-		<Y>130</Y>
+		<X>-430</X>
+		<Y>70</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -17,13 +17,17 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[Caregiver]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[// Temporarily set to random caregiver while waiting for Main to assign actual caregiver
+main.caregivers.random(); ]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1761845692930</Id>
 		<Name><![CDATA[diseaseProgressionRate]]></Name>
-		<X>-410</X>
-		<Y>170</Y>
+		<X>-430</X>
+		<Y>130</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -47,8 +51,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1761845793004</Id>
 		<Name><![CDATA[behaviourSymptomSeverity]]></Name>
-		<X>-410</X>
-		<Y>200</Y>
+		<X>-430</X>
+		<Y>160</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -69,8 +73,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1761849104166</Id>
 		<Name><![CDATA[demColour]]></Name>
-		<X>-410</X>
-		<Y>230</Y>
+		<X>-430</X>
+		<Y>190</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -91,8 +95,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1762246136305</Id>
 		<Name><![CDATA[nearestAdultDayCareCenter]]></Name>
-		<X>-410</X>
-		<Y>290</Y>
+		<X>-430</X>
+		<Y>250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -110,8 +114,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1763773263543</Id>
 		<Name><![CDATA[inAdultDayCare]]></Name>
-		<X>-410</X>
-		<Y>260</Y>
+		<X>-430</X>
+		<Y>220</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -132,8 +136,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1764465528544</Id>
 		<Name><![CDATA[adultDayCareHoursThisWeek]]></Name>
-		<X>-410</X>
-		<Y>320</Y>
+		<X>-430</X>
+		<Y>280</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -154,8 +158,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1764467959838</Id>
 		<Name><![CDATA[currentTime]]></Name>
-		<X>-410</X>
-		<Y>350</Y>
+		<X>-430</X>
+		<Y>310</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -173,13 +177,32 @@
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1764873654698</Id>
+		<Name><![CDATA[myHome]]></Name>
+		<X>-430</X>
+		<Y>100</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Home]]></Type>
+		</Properties>
+	</Variable>
 	<Variable Class="Parameter">
 		<Id>1761804053569</Id>
 		<Name><![CDATA[careNeedHoursPerWeek]]></Name>
-		<X>-60</X>
-		<Y>130</Y>
+		<X>-40</X>
+		<Y>40</Y>
 		<Label>
-			<X>-145</X>
+			<X>-146</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -204,10 +227,10 @@
 	<Variable Class="Parameter">
 		<Id>1761804069440</Id>
 		<Name><![CDATA[professionalCareHours]]></Name>
-		<X>-60</X>
-		<Y>150</Y>
+		<X>-40</X>
+		<Y>70</Y>
 		<Label>
-			<X>-140</X>
+			<X>-138</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -232,10 +255,10 @@
 	<Variable Class="Parameter">
 		<Id>1761805921317</Id>
 		<Name><![CDATA[healthStatus]]></Name>
-		<X>-60</X>
-		<Y>170</Y>
+		<X>-40</X>
+		<Y>100</Y>
 		<Label>
-			<X>-90</X>
+			<X>-82</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -250,57 +273,6 @@
 			</DefaultValue>
 			<ParameterEditor>
 				<Id>1761805921315</Id>
-				<EditorContolType>TEXT_BOX</EditorContolType>
-				<MinSliderValue>0</MinSliderValue>
-				<MaxSliderValue>100</MaxSliderValue>
-				<DelimeterType>NO_DELIMETER</DelimeterType>
-			</ParameterEditor>
-		</Properties>
-	</Variable>
-	<Variable Class="Parameter">
-		<Id>1762244847946</Id>
-		<Name><![CDATA[home]]></Name>
-		<X>-60</X>
-		<Y>210</Y>
-		<Label>
-			<X>-60</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-			<Type><![CDATA[Home]]></Type>
-			<UnitType>NONE</UnitType>
-			<SdArray>false</SdArray>
-			<ParameterEditor>
-				<Id>1762244847944</Id>
-				<EditorContolType>TEXT_BOX</EditorContolType>
-				<MinSliderValue>0</MinSliderValue>
-				<MaxSliderValue>100</MaxSliderValue>
-				<DelimeterType>NO_DELIMETER</DelimeterType>
-			</ParameterEditor>
-		</Properties>
-	</Variable>
-	<Variable Class="Parameter">
-		<Id>1762250863846</Id>
-		<Name><![CDATA[caregiver]]></Name>
-		<X>-60</X>
-		<Y>240</Y>
-		<Label>
-			<X>-75</X>
-			<Y>-5</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-			<Type><![CDATA[Caregiver]]></Type>
-			<UnitType>NONE</UnitType>
-			<SdArray>false</SdArray>
-			<ParameterEditor>
-				<Id>1762250863844</Id>
-				<Label><![CDATA[caregiver]]></Label>
 				<EditorContolType>TEXT_BOX</EditorContolType>
 				<MinSliderValue>0</MinSliderValue>
 				<MaxSliderValue>100</MaxSliderValue>

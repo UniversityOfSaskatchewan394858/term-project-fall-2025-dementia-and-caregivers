@@ -38,14 +38,14 @@
 		<TimeAccuracy>1.0E-5</TimeAccuracy>
 		<Frame>
 			<Id>1761801718535</Id>
-			<Width>1280</Width>
-			<Height>1430</Height>
+			<Width>1000</Width>
+			<Height>1000</Height>
 		</Frame>
 		<Database>
 			<Id>1761801718534</Id>
-			<Logging>true</Logging>
+			<Logging>false</Logging>
 			<AutoExport>false</AutoExport>
-			<ShutdownCompact>true</ShutdownCompact>
+			<ShutdownCompact>false</ShutdownCompact>
 			<ImportSettings/>
 			<ExportSettings/>
 		</Database>
