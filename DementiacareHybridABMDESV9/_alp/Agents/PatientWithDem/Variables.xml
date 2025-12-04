@@ -17,6 +17,10 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[Caregiver]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[// Temporarily set to random caregiver while waiting for Main to assign actual caregiver
+main.caregivers.random(); ]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">

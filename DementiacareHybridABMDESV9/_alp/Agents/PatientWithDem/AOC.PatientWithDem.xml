@@ -353,7 +353,8 @@ DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
 					<Unit Class="RateUnits">PER_WEEK</Unit>
 				</Rate>
 				<Guard>AdultDayCareEnrollmentStatusStatechart.isStateActive(Enrolled)&amp;&amp;
-currentTime == 8;</Guard>
+currentTime == 8;
+</Guard>
 				<MessageType>Object</MessageType>
 				<DefaultTransition>true</DefaultTransition>
 				<FilterType>unconditionally</FilterType>
@@ -499,6 +500,7 @@ currentTime == 8;</Guard>
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_WEEK</Unit>
 				</Rate>
+				<Guard>main.enableInterventions;</Guard>
 				<MessageType>Object</MessageType>
 				<DefaultTransition>true</DefaultTransition>
 				<FilterType>unconditionally</FilterType>

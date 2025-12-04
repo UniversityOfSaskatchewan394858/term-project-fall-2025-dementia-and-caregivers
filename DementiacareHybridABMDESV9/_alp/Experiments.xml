@@ -685,11 +685,11 @@
 	</SimulationExperiment>
 	<SimulationExperiment ActiveObjectClassId="1761801718537">
 		<Id>1764457599690</Id>
-		<Name><![CDATA[SinglePatientTest]]></Name>
+		<Name><![CDATA[SinglePatientSanityTesting]]></Name>
 		<Import><![CDATA[import java.io.*;]]></Import>
 		<CommandLineArguments/>
 		<MaximumMemory>512</MaximumMemory>
-		<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+		<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 		<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 		<BeforeSimulationRunCode>try {
     root.csvWriter = new PrintWriter(new File("caregiver_data.csv"));
@@ -737,6 +737,9 @@
 		<Parameters>
 			<Parameter>
 				<ParameterName>enableInterventions</ParameterName>
+				<ParameterValue Class="CodeValue">
+					<Code><![CDATA[true]]></Code>
+				</ParameterValue>
 			</Parameter>
 			<Parameter>
 				<ParameterName>interventionStartWeek</ParameterName>
@@ -785,6 +788,9 @@
 			</Parameter>
 			<Parameter>
 				<ParameterName>enableStipend</ParameterName>
+				<ParameterValue Class="CodeValue">
+					<Code><![CDATA[true]]></Code>
+				</ParameterValue>
 			</Parameter>
 			<Parameter>
 				<ParameterName>stipendAmount</ParameterName>
