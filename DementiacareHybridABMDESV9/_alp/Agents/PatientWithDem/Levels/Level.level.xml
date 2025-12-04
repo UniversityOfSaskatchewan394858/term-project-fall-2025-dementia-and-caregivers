@@ -596,8 +596,8 @@
 	<RoundedRectangle>
 		<Id>1763834501520</Id>
 		<Name><![CDATA[roundRect5]]></Name>
-		<X>-430</X>
-		<Y>100</Y>
+		<X>-450</X>
+		<Y>20</Y>
 		<Label>
 			<X>-210</X>
 			<Y>205</Y>
@@ -613,8 +613,8 @@
 		<LineColor>-12156236</LineColor>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
-		<Width>190</Width>
-		<Height>270</Height>
+		<Width>220</Width>
+		<Height>310</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor/>
 		<FillMaterial>null</FillMaterial>
@@ -623,35 +623,8 @@
 	<RoundedRectangle>
 		<Id>1763834536735</Id>
 		<Name><![CDATA[roundRect6]]></Name>
-		<X>-220</X>
-		<Y>100</Y>
-		<Label>
-			<X>-210</X>
-			<Y>205</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>0</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineColor>-12156236</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>180</Width>
-		<Height>170</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor/>
-		<FillMaterial>null</FillMaterial>
-		<ArcRadius>10</ArcRadius>
-	</RoundedRectangle>
-	<RoundedRectangle>
-		<Id>1763834591775</Id>
-		<Name><![CDATA[roundRect7]]></Name>
-		<X>-220</X>
-		<Y>280</Y>
+		<X>-210</X>
+		<Y>20</Y>
 		<Label>
 			<X>-210</X>
 			<Y>205</Y>
@@ -668,7 +641,34 @@
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>190</Width>
-		<Height>120</Height>
+		<Height>100</Height>
+		<Rotation>0.0</Rotation>
+		<FillColor/>
+		<FillMaterial>null</FillMaterial>
+		<ArcRadius>10</ArcRadius>
+	</RoundedRectangle>
+	<RoundedRectangle>
+		<Id>1763834591775</Id>
+		<Name><![CDATA[roundRect7]]></Name>
+		<X>-210</X>
+		<Y>140</Y>
+		<Label>
+			<X>-210</X>
+			<Y>205</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>0</ZHeight>
+		<LineWidth>1</LineWidth>
+		<LineColor>-12156236</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<Width>190</Width>
+		<Height>160</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor/>
 		<FillMaterial>null</FillMaterial>

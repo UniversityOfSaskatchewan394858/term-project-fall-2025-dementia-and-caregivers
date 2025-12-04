@@ -141,7 +141,7 @@
 				<Y>15</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
+			<PresentationFlag>false</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="140" Height="40">
 				<FillColor/>
@@ -157,7 +157,7 @@
 				<Y>15</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
+			<PresentationFlag>false</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Properties Width="140" Height="40">
 				<FillColor/>
@@ -303,7 +303,7 @@
 				<Y>0</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
+			<PresentationFlag>false</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Points>
 				<Point>
@@ -315,9 +315,7 @@
 					<Y>60</Y>
 				</Point>
 			</Points>
-			<Properties Target="1762241833862">
-				<Action>jumpTo(home.getX()-5, home.getY())</Action>
-			</Properties>
+			<Properties Target="1762241833862"/>
 		</StatechartElement>
 		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
 			<Id>1762241980457</Id>
@@ -329,7 +327,7 @@
 				<Y>30</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
+			<PresentationFlag>false</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Points>
 				<Point>
@@ -348,7 +346,7 @@
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">WEEK</Unit>
 				</Timeout>
-				<Condition>caregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || 
+				<Condition>myCaregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || 
 DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[0.75]]></Code>
@@ -373,7 +371,7 @@ currentTime == 8;</Guard>
 				<Y>-40</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
+			<PresentationFlag>false</PresentationFlag>
 			<ShowLabel>true</ShowLabel>
 			<Points>
 				<Point>
@@ -496,7 +494,7 @@ currentTime == 8;</Guard>
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="TimeUnits">WEEK</Unit>
 				</Timeout>
-				<Condition>caregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
+				<Condition>myCaregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
 				<Rate Class="CodeUnitValue">
 					<Code><![CDATA[1]]></Code>
 					<Unit Class="RateUnits">PER_WEEK</Unit>
@@ -560,7 +558,7 @@ currentTime == 8;</Guard>
 				<Y>0</Y>
 			</Label>
 			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
+			<PresentationFlag>false</PresentationFlag>
 			<ShowLabel>false</ShowLabel>
 			<Points>
 				<Point>

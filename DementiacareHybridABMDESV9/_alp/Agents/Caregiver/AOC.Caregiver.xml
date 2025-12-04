@@ -193,7 +193,7 @@ stressIndicator.setFillColor(cyan);</EntryAction>
 			<Id>1762248639726</Id>
 			<Name><![CDATA[AtPCaregiversHome]]></Name>
 			<X>80</X>
-			<Y>680</Y>
+			<Y>620</Y>
 			<Label>
 				<X>10</X>
 				<Y>10</Y>
@@ -632,7 +632,7 @@ traceln("Support mitigated to Low Distress");</Action>
 			<Id>1762248630145</Id>
 			<Name><![CDATA[Location]]></Name>
 			<X>120</X>
-			<Y>640</Y>
+			<Y>580</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>

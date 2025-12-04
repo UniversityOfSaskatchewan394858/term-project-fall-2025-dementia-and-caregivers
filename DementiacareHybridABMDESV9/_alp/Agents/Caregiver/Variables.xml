@@ -3,11 +3,11 @@
 	<Variable Class="PlainVariable">
 		<Id>1761807601971</Id>
 		<Name><![CDATA[stressLevel]]></Name>
-		<X>-610</X>
-		<Y>295</Y>
+		<X>-400</X>
+		<Y>360</Y>
 		<Label>
-			<X>12</X>
-			<Y>1</Y>
+			<X>10</X>
+			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
@@ -25,8 +25,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1761807608076</Id>
 		<Name><![CDATA[careQuality]]></Name>
-		<X>-610</X>
-		<Y>270</Y>
+		<X>-400</X>
+		<Y>330</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -47,10 +47,10 @@
 	<Variable Class="PlainVariable">
 		<Id>1761807616796</Id>
 		<Name><![CDATA[inService]]></Name>
-		<X>-610</X>
-		<Y>400</Y>
+		<X>-400</X>
+		<Y>480</Y>
 		<Label>
-			<X>15</X>
+			<X>10</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -69,10 +69,10 @@
 	<Variable Class="PlainVariable">
 		<Id>1761807623422</Id>
 		<Name><![CDATA[myPatient]]></Name>
-		<X>-610</X>
+		<X>-400</X>
 		<Y>120</Y>
 		<Label>
-			<X>14.766</X>
+			<X>10</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -88,8 +88,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1761808289510</Id>
 		<Name><![CDATA[DistressColour]]></Name>
-		<X>-610</X>
-		<Y>430</Y>
+		<X>-400</X>
+		<Y>510</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -111,8 +111,8 @@
 		<Id>1762302219605</Id>
 		<Name><![CDATA[workloadStress]]></Name>
 		<Description><![CDATA[( Will be 0.0, 0.5, 1.5, or 3.0)]]></Description>
-		<X>-610</X>
-		<Y>315</Y>
+		<X>-400</X>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -134,8 +134,8 @@
 		<Id>1762302229720</Id>
 		<Name><![CDATA[financialStress]]></Name>
 		<Description><![CDATA[( Will be 0.0, 0.5, 1.5, or 3.0)]]></Description>
-		<X>-610</X>
-		<Y>340</Y>
+		<X>-400</X>
+		<Y>420</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -157,8 +157,8 @@
 		<Id>1762302243768</Id>
 		<Name><![CDATA[sleepStress]]></Name>
 		<Description><![CDATA[( Will be 0.0, 0.5, 1.5, or 3.0)]]></Description>
-		<X>-610</X>
-		<Y>370</Y>
+		<X>-400</X>
+		<Y>450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -179,8 +179,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1763766291890</Id>
 		<Name><![CDATA[familyWeeklyIncome]]></Name>
-		<X>-610</X>
-		<Y>150</Y>
+		<X>-400</X>
+		<Y>180</Y>
 		<Label>
 			<X>9.766</X>
 			<Y>0</Y>
@@ -201,8 +201,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1763766346649</Id>
 		<Name><![CDATA[sleepQualityHoursPerWeek]]></Name>
-		<X>-610</X>
-		<Y>175</Y>
+		<X>-400</X>
+		<Y>210</Y>
 		<Label>
 			<X>9.766</X>
 			<Y>0</Y>
@@ -223,8 +223,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1763766372754</Id>
 		<Name><![CDATA[workloadHoursPerWeek]]></Name>
-		<X>-610</X>
-		<Y>200</Y>
+		<X>-400</X>
+		<Y>240</Y>
 		<Label>
 			<X>9.766</X>
 			<Y>0</Y>
@@ -245,8 +245,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1763768948784</Id>
 		<Name><![CDATA[copingSkills]]></Name>
-		<X>-610</X>
-		<Y>250</Y>
+		<X>-400</X>
+		<Y>300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -267,8 +267,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1763840220741</Id>
 		<Name><![CDATA[careQualityEffectiveness]]></Name>
-		<X>-610</X>
-		<Y>225</Y>
+		<X>-400</X>
+		<Y>270</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -286,13 +286,32 @@
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1764873748227</Id>
+		<Name><![CDATA[myHome]]></Name>
+		<X>-400</X>
+		<Y>150</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Home]]></Type>
+		</Properties>
+	</Variable>
 	<Variable Class="Parameter">
 		<Id>1761805012908</Id>
 		<Name><![CDATA[careQualityDecayRate]]></Name>
 		<X>-40</X>
 		<Y>120</Y>
 		<Label>
-			<X>-140</X>
+			<X>-130</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -320,7 +339,7 @@
 		<X>-40</X>
 		<Y>150</Y>
 		<Label>
-			<X>-155</X>
+			<X>-150</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -376,9 +395,9 @@
 		<Name><![CDATA[w_F]]></Name>
 		<Description><![CDATA[weight of financial  stressor]]></Description>
 		<X>-40</X>
-		<Y>220</Y>
+		<Y>210</Y>
 		<Label>
-			<X>-40</X>
+			<X>-35</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>
@@ -405,9 +424,9 @@
 		<Name><![CDATA[w_S]]></Name>
 		<Description><![CDATA[weight of Sleep quality stressor]]></Description>
 		<X>-40</X>
-		<Y>250</Y>
+		<Y>240</Y>
 		<Label>
-			<X>-40</X>
+			<X>-35</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>false</PublicFlag>

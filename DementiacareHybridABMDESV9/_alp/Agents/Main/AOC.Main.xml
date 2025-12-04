@@ -5,10 +5,14 @@
 	<Import><![CDATA[import java.io.File;
 import java.io.PrintWriter;
 import java.io.FileNotFoundException;]]></Import>
-	<StartupCode><![CDATA[for (Caregiver c : caregivers) {
-    PatientWithDem p = patientWithDem.random();
+	<StartupCode><![CDATA[
+for (Caregiver c : caregivers) {
+    PatientWithDem p = patientWithDem.get(c.getIndex());
+    Home h = homes.get(c.getIndex());
     c.myPatient = p;
+    c.myHome = h;
     p.myCaregiver = c;
+    p.myHome = h;
 }
 traceln("Linked caregivers to patients");
 
@@ -76,8 +80,8 @@ traceln("===== Initialization Complete =====");]]></StartupCode>
 			<Unit Class="TimeUnits">SECOND</Unit>
 		</StepDurationCode>
 		<SpaceType>CONTINUOUS</SpaceType>
-		<WidthCode>500</WidthCode>
-		<HeightCode>500</HeightCode>
+		<WidthCode>frameWidth</WidthCode>
+		<HeightCode>frameHeight</HeightCode>
 		<ZHeightCode>0</ZHeightCode>
 		<ColumnsCountCode>100</ColumnsCountCode>
 		<RowsCountCode>100</RowsCountCode>
@@ -131,7 +135,7 @@ traceln("===== Initialization Complete =====");]]></StartupCode>
 			<Name><![CDATA[file]]></Name>
 			<ExcludeFromBuild>true</ExcludeFromBuild>
 			<X>-380</X>
-			<Y>530</Y>
+			<Y>380</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>
