@@ -1,12 +1,10 @@
-# Model Equations - V3
+# Model Equations - V4
 
 ## Overview
 
-This document explains the math for our agent-based model. This version has been updated after our meeting to use **weekly** time units for all caregiver stress variables. This makes our model more realistic and allows us to directly use the data from our research (like the CIHI and Sask Dashboard sources).
+This document explains the math for our agent-based model.
 
-We are using a **linear model** for stress, and this document shows our current equations, plus some new proposals for our team to discuss.
-
-This file also includes our next big step (Section 4), which is planning the **Discrete-Event Simulation (DES)** part of our hybrid model.
+We are using a **weighted linear model** for stress, and this document shows our current equations as implemented in AnyLogic.
 
 ---
 
@@ -14,138 +12,153 @@ This file also includes our next big step (Section 4), which is planning the **D
 
 ### Equation 1.1: Workload Stress Component
 
-$$S_W = \begin{cases}
-0.0 & \text{if }  H_p < 10 \\
-0.5 & \text{if } 10 \leq H_p < 25 \\
-1.5 & \text{if } 25 \leq H_p < 30 \\
-3.0 & \text{if } H_p \geq 30
-\end{cases}$$
+Stress from the total hours of care per week (H_p):
 
-**What It Measures:** Stress from the *total hours of care per week* ($H_p$).
+- 0.0 if H_p < 10
+- 0.5 if 10 ≤ H_p < 25
+- 1.0 if 25 ≤ H_p < 40
+- 1.5 if 40 ≤ H_p < 60
+- 2.0 if 60 ≤ H_p < 90
+- 2.5 if 90 ≤ H_p < 120
+- 3.0 if H_p ≥ 120
 
-**Why It Matters:** This is a main cause of tiredness. Our research (CIHI, 2025) shows caregivers provide **26 hours/week**, which fits perfectly into our "Moderate Stress" (1.5) bracket.
+**What It Measures:** Stress from the _total hours of care per week_.
 
-**Implemented in:** `calculateStressLevels()`
+**Why It Matters:** This is a main cause of tiredness. Our research (CIHI, 2025) shows caregivers provide **26 hours/week**, which fits into our "Low Stress" (0.5) bracket.
+
+**Implemented in:** `workloadCalculation()` function in AnyLogic
 
 ---
 
-### Equation 1.2: Financial Stress Component (Our Current Version)
+### Equation 1.2: Financial Stress Component
 
-$$S_F = \begin{cases}
-3.0 & \text{if } I_w < 800 \\
-1.5 & \text{if } 800 \leq I_w < 1300 \\
-0.5 & \text{if } 1300 \leq I_w < 1900 \\ 
-0.0 & \text{if } I_w \geq 1900
-\end{cases}$$
+Stress from weekly family income (I_w) with base costs (baseCost = $1500/week):
 
-**What It Measures:** Stress from **weekly** family income ($I_w$).
+**incomeRatio = I_w / baseCost**
 
-**Why It Matters:** This models financial strain. We've also added a "no stress" category (0.0) for high-income families.
+Then:
 
-> ** Note to Team:**
+- 0.0 if incomeRatio ≥ 1.5 (comfortable)
+- 0.3 if 1.0 ≤ incomeRatio < 1.5 (buffer)
+- 0.6 if 0.8 ≤ incomeRatio < 1.0 (breaking even)
+- 1.0 if 0.6 ≤ incomeRatio < 0.8 (moderate strain)
+- 1.3 if 0.4 ≤ incomeRatio < 0.6 (high strain)
+- 1.7 if incomeRatio < 0.4 (severe strain)
+- 3.0 if incomeRatio < 0.15 (critical)
+
+**What It Measures:** Stress from **weekly** family income adjusted by base costs.
+
+**Why It Matters:** This models financial strain as a ratio. The stipend can be added directly to income:
+
+**incomeThisWeek = familyWeeklyIncome + (stipendAmount if enableStipend)**
+
+> **Note to Team:**
 >
-> These new weekly numbers are *much* more realistic for Saskatchewan.
+> This ratio-based approach is more realistic than fixed brackets.
 >
-> * Our Sask Dashboard source shows the **average weekly earning is $1,300.**
-> * This number now falls perfectly into our "Moderate Stress" (1.5) bracket.
-> * This is great justification. It means a "normal" single-income family in our model will start with moderate financial stress.
-> * We can still use the `incomeType` parameter (Single, Dual, Retired) to set the `familyIncomeWeekly` for each agent IF we go that route.
+> - Sask Dashboard shows average weekly earning of ~$1,275.
+> - With baseCost = $1500, this gives an incomeRatio of 0.85 (moderate strain, stress = 1.0).
+> - This validates that a "normal" single-income family in our model starts with moderate financial stress.
 
-**New Proposed Equation:**
-
-$$S_F = \begin{cases}
-3.0 & \text{if } \text{StrainRatio} > 0.25 \\
-1.5 & \text{if } 0.10 < \text{StrainRatio} \leq 0.25 \\
-0.5 & \text{if } \text{StrainRatio} \leq 0.10
-\end{cases}$$
-
-> ** Proposal for a Better Equation (Later in the project if time allows!!!):**
->
-> I think we should switch from these fixed income brackets to a **"Strain Ratio"** (`Costs / Income`), as shown above.
->
-> **Why this is better:**
-> 1.  **It's more realistic:** It measures the *percentage* of income someone spends on care. A $150-300/wk cost is a crisis for a low-income family (37% strain) but manageable for a high-income one (12% strain).
-> 2.  **It makes our stipend idea work perfectly:** To test the stipend, we just add it to the income. This will clearly lower the `StrainRatio` and show a clear drop in stress. We have a source that Nova Scotia already does this.
+**Implemented in:** `weeklyIncomeCalculation()` function in AnyLogic
 
 ---
 
 ### Equation 1.3: Sleep Quality Stress Component
 
-$$S_S = \begin{cases}
-3.0 & \text{if } S_h < 28 \\ 
-1.5 & \text{if } 28 \leq S_h < 42 \\
-0.5 & \text{if } 42 \leq S_h < 49 \\
-0.0 & \text{if } S_h \geq 49
-\end{cases}$$
+Stress from total hours of sleep per week (S_h):
 
-**What It Measures:** Stress from the *total hours of sleep per week* ($S_h$).
+- 0.0 if S_h ≥ 49
+- 0.5 if 42 ≤ S_h < 49
+- 1.0 if 35 ≤ S_h < 42
+- 1.5 if 28 ≤ S_h < 35
+- 2.0 if 21 ≤ S_h < 28
+- 2.5 if 14 ≤ S_h < 21
+- 3.0 if S_h < 14
+
+**What It Measures:** Stress from the _total hours of sleep per week_.
 
 **Why It Matters:** Sleep deprivation is a critical stressor. We've added a "no stress" category (0.0) for caregivers who get plenty of sleep.
 
-**Implemented in:** `calculateStressLevels()`
+**Implemented in:** `sleepQualityCalculation()` function in AnyLogic
 
-> ** Note to Team:**
+> **Note to Team:**
 >
-> These numbers are just the daily numbers multiplied by 7.
+> These numbers are daily numbers multiplied by 7.
 >
-> * **High Stress (`< 28` /wk):** This is less than 4 hours/night. This is the crisis level.
-> * **Moderate Stress (`28-42` /wk):** This is 4 to 6 hours/night. This is the "not coping" range.
-> * **Low Stress (`42-49` /wk):** This is 6 to 7 hours/night. This is "acceptable but not great."
-> * **No Stress (`>= 49` /wk):** This is 7+ hours/night, which is a healthy amount.
+> - **No Stress (≥ 49 /wk):** 7+ hours/night. Healthy amount.
+> - **Low Stress (42-49 /wk):** 6 to 7 hours/night. "Acceptable but not great."
+> - **Moderate Stress (35-42 /wk):** 5 to 6 hours/night. "Getting impacted."
+> - **High Stress (< 35 /wk):** Less than 5 hours/night. Crisis range.
 
 ---
 
-### Equation 1.4: Composite Caregiver Stress Level (Our Current Version)
+### Equation 1.4: Composite Caregiver Stress Level (ACTUAL IMPLEMENTATION)
 
-$$\sigma_C = \frac{S_W + S_F + S_S}{3}$$
+Total caregiver stress using **weighted sum**:
 
-**What It Measures:** The *total* caregiver stress, by averaging the three components.
+**stressLevel = (w_W × S_W + w_F × S_F + w_S × S_S) / (w_W + w_F + w_S)**
 
-**Why It Matters:** This is our core stress equation. It's simple, linear, and easy to explain.
+**Where:**
 
-> **💡 Note to Team (Our Current Method):**
+- w_W = weight for workload stress (default = 0.33)
+- w_F = weight for financial stress (default = 0.33)
+- w_S = weight for sleep stress (default = .34)
+
+By default (all weights = 1.0), this simplifies to:
+
+**stressLevel = (S_W + S_F + S_S) / 1**
+
+**What It Measures:** The _total_ caregiver stress.
+
+**Why It Matters:** This is our core stress equation. It's linear and flexible. We can adjust weights later for sensitivity analysis.
+
+> ** Implementation Note:**
 >
-> * **What this means:** We are assuming that Workload, Finances, and Sleep are all **equally important** (each one is 33.3% of the total stress).
-> * **How it works:** The equation adds the three stress scores (which are 0, 0.5, 1.5, or 3.0) and divides by 3. The final `stressLevel` ($\sigma_C$) will be a number between 0 and 3.
+> - **Current behaviour:** All three stressors are equally weighted.
+> - **Future flexibility:** We can change w_W, w_F, w_S to model different priorities.
+> - **Example:** If sleep is more critical, set w_S = 0.5, w_W = 0.3, w_F = 0.2 (weights sum to 1.0).
+> - **Always normalizes** by dividing by the sum of weights, so final stressLevel stays 0-3.
 
-**New Proposed Equation:**
-
-$$\sigma_C = (w_W \cdot S_W) + (w_F \cdot S_F) + (w_S \cdot S_S)$$
-
-> ** Proposal for a Better Equation (Based on Yujie's Report - Later in the project if time allows!):**
->
-> Instead of the simple average above, I propose we use a **Weighted Sum**, just like the reference paper (`YujiePei_Report`) does [cite: page 11-12].
->
-> * **What this means:** We can *decide* how important each stressor is. The weights ($w$) must add up to 1.0.
-> * **Example Weights:** We could say Sleep is most important (50%), Workload is second (30%), and Finances last (20%).
->   * $w_S$ (Sleep) = **0.5**
->   * $w_W$ (Workload) = **0.3**
->   * $w_F$ (Financial) = **0.2**
->
-> **Why this is better:** It's more realistic (bad sleep is probably worse than bad finances) and it's *still* a simple linear model. It also lets us do a Sensitivity Analysis for our final report by changing the weights.
+**Implemented in:** `calculateStressLevels()` function in AnyLogic
 
 ---
 
 ### Equation 1.5: Care Quality Delivered by Caregiver
 
-$$Q_C = \max(0.2, \min(1.0, \; 0.8 - \frac{\sigma_C}{3} \times 0.5 + C_S \times 0.2))$$
+Quality of care the caregiver provides:
+
+**normalizedStress = stressLevel / 3.0**
+
+**stressImpact = normalizedStress × 0.5**
+
+**copingBonus = copingSkills × 0.2**
+
+**careQuality = 0.8 - stressImpact + copingBonus**
+
+**careQuality = max(0.2, min(1.0, careQuality))**
+
+**If formal services active:** careQuality += 0.1
 
 **What It Measures:** The quality of care the caregiver provides.
 
-**Why It Matters:** This links caregiver stress directly to patient health. As stress ($\sigma_C$) goes up, care quality ($Q_C$) goes down.
+**Why It Matters:** Links caregiver stress directly to patient health. As stress goes up, care quality goes down. Professional services can offset stress impacts.
 
-> ** Note on `max(min(...))` notation:**
+> **How It Works:**
 >
-> This is a "clamp" to keep our value in a specific range.
-> * `min(1.0, ...)` means "Give me the **smaller** of 1.0 or the result." (This sets a **max limit** of 1.0).
-> * `max(0.2, ...)` means "Give me the **bigger** of 0.2 or that result." (This sets a **min limit** of 0.2).
-> * This just forces the final answer to always be between 0.2 (very poor care) and 1.0 (perfect care).
+> - **Start at 0.8:** Base care quality (decent but not perfect)
+> - **Subtract stress impact:** For every 3.0 stress points, loses 0.5 points quality
+> - **Add coping bonus:** For every 1.0 coping skill point, gains 0.2 quality
+> - **Add service bonus:** If in professional care, gain 0.1 quality
+> - **Clamp result:** Final quality always between 0.2 (very poor) and 1.0 (perfect)
 
-> **💡 Note on the `(sigma_C / 3)` term:**
->
-> * **What it does:** This "normalizes" our stress score. It takes the `stressLevel` (which is on a 0-3 scale) and turns it into a 0-1 percentage.
-> * **Example:** A max stress of `3.0` becomes an impact of `3.0 / 3 = 1.0` (or 100%). A moderate stress of `1.5` becomes an impact of `1.5 / 3 = 0.5` (or 50%).
-> * This is the correct way to use our stress score in this equation.
+**Example:**
+
+- High stress (σ = 2.4): normalizedStress = 0.8, stressImpact = 0.4
+- Good coping (C_S = 0.6): copingBonus = 0.12
+- No services: careQuality = 0.8 - 0.4 + 0.12 = 0.52 (moderate quality)
+
+**Implemented in:** `calculateCareQuality()` function in AnyLogic
 
 ---
 
@@ -153,240 +166,285 @@ $$Q_C = \max(0.2, \min(1.0, \; 0.8 - \frac{\sigma_C}{3} \times 0.5 + C_S \times 
 
 ### Equation 2.1: Disease Progression (Weekly Decline)
 
-$$H(t+1) = \max\left(0, \; H(t) - \frac{r_d \times (1 - Q_E \times 0.5)}{100}\right)$$
+Patient's weekly health decline:
+
+**weeklyDecline = (progressionRate / 100) × (1.0 - effectiveCareQuality × 0.5)**
+
+**healthStatus(t+1) = max(0, healthStatus(t) - weeklyDecline)**
 
 **What It Measures:** The patient's weekly health decline.
 
-**Why It Matters:** This is the core "engine" of the patient's decline. It's based on the concept of "predictable transitions" that can be slowed by high-quality care.
+**Why It Matters:** Core "engine" of patient decline. Based on "predictable transitions" that can be slowed by high-quality care. Quality of care slows (but doesn't stop) decline.
 
-> ** Note on `max(0, ...)` notation:**
+> **How It Works:**
 >
-> This is a trick to set a **"floor"** or a **minimum value** of 0.
-> * `max(0, ...)` means "Give me the **bigger** of 0 or the calculated result."
-> * This simply stops the patient's health from ever going below 0.
+> - **Base decline:** progressionRate / 100 (typically 1.5% per week)
+> - **Care multiplier:** (1.0 - effectiveCareQuality × 0.5)
+>   - At perfect care (Q_E = 1.0): multiplier = 0.5 (50% of decline)
+>   - At poor care (Q_E = 0.1): multiplier = 0.95 (95% of decline)
+> - **Max floor:** Health never goes below 0
 
-> ** Note on the `/ 100` division:**
->
-> The `/ 100` is here to convert our `r_d` (progression rate) from a percentage into a decimal.
-> * In our Variable Table (Section 5), we've set `r_d = 1.5`.
-> * This equation does `1.5 / 100` to get `0.015`, which is the 1.5% weekly decline we want.
+**Example:**
+
+- Progression rate = 1.5
+- Effective care quality = 0.7
+- weeklyDecline = (1.5/100) × (1.0 - 0.7 × 0.5) = 0.015 × 0.65 = 0.0098 (0.98% actual decline)
+
+**Implemented in:** Patient's `updateCareNeeds()` function
 
 ---
 
 ### Equation 2.2: Dementia Stage Assignment
 
-$$\text{Stage}(H) = \begin{cases}
-\text{Moderate} & \text{if } H \geq 0.35 \\
-\text{Severe} & \text{if } 0.15 \leq H < 0.35 \\
-\text{End-stage} & \text{if } H < 0.15
-\end{cases}$$
+Patient's clinical stage based on health variable:
 
-**What It Measures:** The patient's clinical stage based on their health variable.
+- Moderate if H ≥ 0.35
+- Severe if 0.15 ≤ H < 0.35
+- End-stage if H < 0.15
 
-**Why It Matters:** Drives care needs and triggers statechart transitions. This aligns with the "evolving long-term process" of caregiving.
+**What It Measures:** The patient's clinical stage.
 
-**Implemented in:** `progressDisease()`
+**Why It Matters:** Drives care needs and triggers statechart transitions. Aligns with "evolving long-term process" of caregiving.
 
----
-
-### Equation 2.3: Behavioral Symptoms
-
-$$B(H) = \lfloor 10 \times (1 - H) \rfloor$$
-
-**What It Measures:** Severity of behavioral symptoms (0-10) based on health.
-
-**Why It Matters:** This is a major (and currently *missing*) feedback loop. We need to use this variable to influence the caregiver's stress.
-
-> **💡 Proposal for Our Next Discussion:**
->
-> Right now, our model calculates $B(H)$ but never *uses* it. This is a huge missed opportunity to use our research.
->
-> I propose we create a direct link. We can make the patient's symptoms directly reduce the caregiver's sleep *before* we calculate sleep stress.
->
-> **How to Implement in AnyLogic (Java):**
-> ```java
-> // 1. In Patient's updateCareNeeds() function
-> this.behaviouralSymptoms = (int)Math.floor(10 * (1 - this.healthStatus));
-> 
-> // 2. In Caregiver's calculateStressLevels() function
-> double baseSleepPerWeek = 56.0; // 8 hours * 7 days
-> double sleepLossPerWeek = myPatient.behaviouralSymptoms * 2.8;
-> this.sleepQualityHourperWeek = Math.max(0, baseSleepPerWeek - sleepLossPerWeek);
-> 
-> // 3. NOW calculate sleep stress using this new number
-> if (this.sleepQualityHourperWeek < 28) {
->     this.sleepStress = 3.0;
-> } else if (this.sleepQualityHourperWeek < 42) {
->     this.sleepStress = 1.5;
-> } else if (this.sleepQualityHourperWeek < 49) {
->     this.sleepStress = 0.5;
-> } else {
->     this.sleepStress = 0.0;
-> }
-> ```
-> **Why?**
-> * This models that a patient with 10/10 symptoms ($B=10$) reduces caregiver sleep by 28 hours/week (from 56 down to 28).
-> * This would cause their sleep stress to jump from **No Stress (0.0)** to **High Stress (3.0)**.
-> * This is **strongly supported by our CIHI (2025) source**, which says "Behavioural/verbal aggression increases distress by 1.6×". This equation *is* that link.
+**Implemented in:** `progressDisease()` function
 
 ---
 
-### Equation 2.4: Care Needs (Hours Per Week) - **UPDATED**
+### Equation 2.3: Behavioural Symptoms
 
-$$N_C = \max\left(28, \; (28 + (1-H) \times 112) - P_h\right)$$
+Severity of behavioural symptoms (0-10) based on health:
 
-**What It Measures:** How many hours of care the patient needs *per week*.
+**behaviouralSymptoms = floor(10 × (1 - healthStatus))**
 
-**Why It Matters:** This is the primary driver of caregiver workload ($H_p$). We've updated this equation to be fully in "weekly" units, so it's simpler and works with our other variables.
+**What It Measures:** Severity of behavioural symptoms.
 
-> **💡 Note to Team: This equation is now fixed.**
->
-> The old one was in "hours per day" and had a confusing "0.02" number. This new one is much cleaner.
->
-> * **How it works:**
->     * `28`: This is the new minimum (4 hours/day * 7 days/week).
->     * `112`: This is the new range. The *max* care was 20 hours/day (140/week). So the *additional* care on top of the minimum is `140 - 28 = 112`.
->     * `28 + (1-H) * 112`: This calculates the total needed. If patient is healthy (`H=1`), it's 28 hours. If patient is at end-stage (`H=0`), it's 140 hours.
-> * **Intervention:** We can now subtract the `professionalCareHoursPerWeek` ($P_h$) *directly*.
-> * **`max(28, ...)`:** This is the "floor," making sure the need never drops below 28 hours/week.
+**Why It Matters:** Major feedback loop that affects caregiver stress through sleep disruption.
+
+**Implemented in:** Patient's updateCareNeeds() function
 
 ---
 
-### Equation 2.5: Effective Care Quality (Blended)(**NOT USED FOR NOW**)
+### Equation 2.4: Care Needs (Hours Per Week) - UPDATED
 
-$$Q_E = \max\left(0.1, \; \min\left(1.0, \; \frac{Q_C \times H_f + 0.9 \times P_h}{H_f + P_h}\right)\right)$$
+How many hours of care patient needs per week:
 
-**What It Measures:** The *total* quality of care the patient receives, blending family and professional care.
+**N_C = max(28, (28 + (1 - H) × 112) - P_h)**
 
-**Why It Matters:** This equation shows *why* our intervention (Adult Day Homes, $P_h$) works. It not only reduces caregiver workload (Eq 2.4) but also *simultaneously* boosts the overall care quality, slowing the disease (Eq 2.1).
+**What It Measures:** Hours of care needed _per week_.
+
+**Why It Matters:** Primary driver of caregiver workload. Updated to weekly units for simplicity.
+
+> **How It Works:**
+>
+> - `28`: Minimum (4 hours/day × 7 days/week).
+> - `112`: Range. Max care is 20 hours/day (140/week). Additional care = 140 - 28 = 112.
+> - `28 + (1-H) × 112`: Total care needed.
+>   - If healthy (H=1): 28 hours (just daily living support)
+>   - If end-stage (H=0): 140 hours (full-time intensive care, ~20 hrs/day)
+> - **Intervention:** Subtract `professionalCareHoursPerWeek` (P_h) directly.
+> - `max(28, ...)`: Floor ensuring need never drops below 28 hours/week.
+
+**Example:**
+
+- Patient is moderate (H = 0.65): careNeeds = 28 + 0.35 × 112 = 28 + 39.2 = 67.2 hours/week
+- With day care (P_h = 20): effective caregiver workload = 67.2 - 20 = 47.2 hours/week
+
+**Implemented in:** Patient's `updateCareNeeds()` function
+
+---
+
+### Equation 2.5: Effective Care Quality (Blended)
+
+Total quality of care patient receives (blending family and professional):
+
+**effectiveCareQuality = max(0.1, min(1.0, (careQuality × workloadHours + 0.9 × professionalHours) / (workloadHours + professionalHours)))**
+
+**What It Measures:** _Total_ quality of care from both sources.
+
+**Why It Matters:** Shows _why_ our intervention (Adult Day Homes, P_h) works. It not only reduces caregiver workload but also boosts overall care quality, slowing disease progression.
+
+> **How It Works:**
+>
+> - **Family care contribution:** careQuality × workloadHours
+> - **Professional care contribution:** 0.9 × professionalHours (assumes 90% quality)
+> - **Weighted average:** Total hours in denominator
+> - **Bounds:** Always between 0.1 (minimal) and 1.0 (excellent)
+
+**Example:**
+
+- Caregiver quality = 0.6, workload hours = 40
+- Professional hours = 20 (day care)
+- effectiveCareQuality = (0.6 × 40 + 0.9 × 20) / (40 + 20) = (24 + 18) / 60 = 0.7
+
+**Implemented in:** Caregiver's `calculateCareQuality()` function
 
 ---
 
 ## 3. THE FEEDBACK LOOP: How Everything Connects
 
-### The Downward Spiral (The Core of Our Model)
+### The Downward Spiral (Core of Our Model)
 
-$$\sigma_C \rightarrow Q_C \rightarrow Q_E \rightarrow H(t) \rightarrow N_C \rightarrow H_p \rightarrow \sigma_C$$
+Flow: σ_C → Q_C → Q_E → H(t) → N_C → H_p → σ_C
 
 **The Flow:**
 
-1.  **Caregiver stress ($\sigma_C$) is HIGH.** (45% of caregivers)
-2.  $\downarrow$ **Care quality ($Q_C$) DROPS** (as stress goes up, quality goes down, Eq 1.5).
-3.  $\downarrow$ **Effective quality ($Q_E$) DROPS** (no professional help to compensate).
-4.  $\downarrow$ **Patient health ($H(t)$) DECLINES FASTER** (poor care speeds up decline, Eq 2.1).
-5.  $\downarrow$ **Care needs ($N_C$) INCREASE** (sicker patient needs more hours, Eq 2.4).
-6.  $\downarrow$ **Caregiver workload ($H_p$) INCREASES.**
-7.  $\downarrow$ **Caregiver stress ($\sigma_C$) GOES UP.**
-8.  **LOOP REPEATS $\rightarrow$ Spiral downward!**
-
-> ** Note to Team:**
->
-> This is our core story. It's clean, linear, and easy to explain. This is *good* for our model for now, as it will clearly show *why* interventions are so critical. Our interventions (day home, stipend) will break this loop, and the results should be very clear.
+1. **Caregiver stress (σ_C) is HIGH.** (45% of caregivers)
+2. ↓ **Care quality (Q_C) DROPS** (stress increases, quality decreases)
+3. ↓ **Effective quality (Q_E) DROPS** (no professional help to compensate)
+4. ↓ **Patient health (H(t)) DECLINES FASTER** (poor care speeds decline)
+5. ↓ **Care needs (N_C) INCREASE** (sicker patient needs more hours)
+6. ↓ **Caregiver workload (H_p) INCREASES**
+7. ↓ **Behavioral symptoms increase** (patient sicker → worse behavior)
+8. ↓ **Sleep quality DROPS** (symptoms disrupt caregiver sleep)
+9. ↓ **Caregiver stress (σ_C) GOES UP**
+10. **LOOP REPEATS → Spiral downward!**
 
 ---
 
-## 4. NEXT STEPS: The Discrete-Event Simulation (DES) Model
+---
 
-> ** Note to Team: This is our next big task.**
->
-> These equations are our Agent-Based (ABM) model. Now we have to build the "Hybrid" part, which is the Discrete-Event Simulation (DES).
->
-> **1. What it is:**
-> We will create a new agent, `HealthcareProvider`. Inside this agent, we will use blocks from the "Process Modeling Library" to build a flowchart. The most important block will be a **`ResourcePool`** called **`dayCareSlots`**. This will represent the limited number of "beds" or "spots" at an adult day care center (e.g., set the capacity to 20).
->
-> **2. How it Links (Patient Mobility):**
-> The `PatientWithDem` agent will get a new statechart for their *physical location*, just like in Yujie's report (Fig 2.2) [cite: page 8]. This statechart will have states like `AtPatientsHome` and `AtDayCareCentre`.
->
-> **3. How it Links (Caregiver Support):**
-> This is the key. When our `Caregiver` agent's `stressLevel` gets too high, they enter the `SeekingSupport` state. The "Entry Action" for this state will be code that tries to get help from the DES model.
->
-> **Example Code in `SeekingSupport`:**
-> ```java
-> main.healthcareProvider.dayCareSlots.seize(1);
-> ```
->
-> **4. The "So What?":**
-> If there is a free spot in the `dayCareSlots` pool, the caregiver "seizes" it. This will trigger a transition in the *patient's* statechart, moving them from `AtHome` to `AtDayCare`. This will then set the `professionalCareHoursPerWeek` ($P_h$) variable to something like `20`, which will finally give the caregiver relief.
->
-> **But if the `dayCareSlots` are all full**, the caregiver is stuck in the `seize` block. They have to *wait in a queue*. This is the bottleneck. While they wait, they stay in the `SeekingSupport` state, their stress remains high, and the patient's health continues to decline.
+## 4. IMPLEMENTATION DETAILS (AnyLogic Functions)
+
+### Function: weeklyIncomeCalculation()
+
+```java
+// INPUT: familyWeeklyIncome (could be $0-$3000+)
+// OUTPUT: financialStress (will be 0.0-3.0)
+
+double baseCost = 1500.0; // Realistic weekly expenses for dementia care household
+
+double incomeThisWeek = familyWeeklyIncome;
+
+// Add stipend if enabled
+if (main.enableStipend) {
+    incomeThisWeek += main.stipendAmount; // e.g., +$200/week
+}
+
+// Calculate income ratio (buffering effect)
+double incomeRatio = incomeThisWeek / baseCost;
+
+// Map ratio to financial stress (0-3 scale, bounded)
+if (incomeRatio >= 1.5) {
+    financialStress = 0.0; // Income well above expenses
+} else if (incomeRatio >= 1.0) {
+    financialStress = 0.3; // Comfortable buffer
+} else if (incomeRatio >= 0.8) {
+    financialStress = 0.6; // Breaking even
+} else if (incomeRatio >= 0.6) {
+    financialStress = 1.0; // Moderate strain
+} else if (incomeRatio >= 0.4) {
+    financialStress = 1.3; // High strain
+} else if (incomeRatio >= 0.15) {
+    financialStress = 1.7; // Severe strain
+} else {
+    financialStress = 3.0; // Critical (clamped at 3.0)
+}
+```
+
+### Function: workloadCalculation()
+
+```java
+// INPUT: workloadHoursPerWeek (could be 0-140)
+// OUTPUT: workloadStress (will be 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, or 3.0)
+
+if (workloadHoursPerWeek < 10) {
+    workloadStress = 0.0;
+} else if (workloadHoursPerWeek < 25) {
+    workloadStress = 0.5;
+} else if (workloadHoursPerWeek < 40) {
+    workloadStress = 1.0;
+} else if (workloadHoursPerWeek < 60) {
+    workloadStress = 1.5;
+} else if (workloadHoursPerWeek < 90) {
+    workloadStress = 2.0;
+} else if (workloadHoursPerWeek < 120) {
+    workloadStress = 2.5;
+} else {
+    workloadStress = 3.0;
+}
+```
+
+### Function: sleepQualityCalculation()
+
+```java
+// INPUT: sleepQualityHourperWeek (could be 0-56)
+// OUTPUT: sleepStress (will be 0.0, 0.5, 1.0, 1.5, 2.0, 2.5, or 3.0)
+
+if (sleepQualityHourperWeek >= 49) {
+    sleepStress = 0.0;
+} else if (sleepQualityHourperWeek >= 42) {
+    sleepStress = 0.5;
+} else if (sleepQualityHourperWeek >= 35) {
+    sleepStress = 1.0;
+} else if (sleepQualityHourperWeek >= 28) {
+    sleepStress = 1.5;
+} else if (sleepQualityHourperWeek >= 21) {
+    sleepStress = 2.0;
+} else if (sleepQualityHourperWeek >= 14) {
+    sleepStress = 2.5;
+} else {
+    sleepStress = 3.0;
+}
+```
+
+### Function: calculateStressLevels() (ACTUAL WEIGHTED VERSION)
+
+```java
+// Normalize quadratic stress to 0-1 scale
+double normalizedStress = stressLevel / 3.0; // Max is 3.0
+
+// Calculate care quality
+double stressImpact = normalizedStress * 0.5;
+double copingBonus = copingSkillsBoostAmount * 0.2;
+
+careQuality = 0.8 - stressImpact + copingBonus;
+
+if (inService) {
+    careQuality += 0.1; // Service relief bonus
+}
+
+// Clamp to valid range
+careQuality = Math.max(0.2, Math.min(1.0, careQuality));
+```
+
+### Function: calculateCompositeStress() (WEIGHTED)
+
+```java
+// Calculate weighted stress level
+stressLevel = (w_W * workloadStress + w_F * financialStress + w_S * sleepStress)
+              / (w_W + w_F + w_S);
+
+// Default: w_W = w_F = w_S = 1.0, so this becomes:
+// stressLevel = (workloadStress + financialStress + sleepStress) / 3
+```
 
 ---
 
-## How to Implement This As of Now (Parameters vs. Variables)
+## 6. VARIABLE REFERENCE TABLE (Updated)
 
-> ** Note to Team: This is how we build the model in AnyLogic currently.**
->
-> This explains what the difference is between a "Parameter" and a "Variable" and which ones we need to create.
-
-### What is a **Parameter**?
-* A **Parameter** is a **Setting**.
-* We set its value *before* the simulation starts (e.g., `1.5`).
-* It **does not change** while the model is running.
-* **Think of it like:** The "Difficulty" setting in a game.
-* **We use these for:** Our "what-if" interventions (like the stipend) and our main assumptions.
-
-### What is a **Variable**?
-* A **Variable** is a **Calculated Result**.
-* Its value is **always changing** every week as our equations run.
-* **Think of it like:** Your "Health Bar" or "Score" in a game.
-* **We use these for:** The values we want to measure (like `stressLevel` and `healthStatus`).
-
----
-
-### Our Project's Parameters (Settings)
-
-**In `PatientWithDem`:**
-* `progressionRate` ($r_d$): Set to `1.5`
-* `professionalCareHoursPerWeek` ($P_h$): This is our **intervention #1**. We'll set it to `0` for the baseline, and `20` for the "day care" scenario.
-* `outOfPocketCostsWeekly`: (For the "Strain Ratio" proposal). We'd set this based on the patient's stage.
-
-**In `Caregiver`:**
-* `copingSkills` ($C_S$): Set to a value like `0.5`.
-* `stipendWeeklyAmount`: This is our **intervention #2**. We'll set it to `0` or `125`.
-* `incomeType`: (For the "Strain Ratio" proposal). We'll set this to `SINGLE_INCOME`, `DUAL_INCOME`, or `RETIRED`.
-
-### Our Project's Variables (Calculated Results)
-
-**In `PatientWithDem`:**
-* `healthStatus` ($H(t)$): **(MAIN PATIENT VARIABLE)** Changes every week based on Eq 2.1.
-* `behaviouralSymptoms` ($B$): Changes every week based on health.
-* `careNeedsHoursPerWeek` ($N_C$): Changes every week based on health.
-* `effectiveCareQuality` ($Q_E$): Changes every week based on the caregiver's `careQuality`.
-
-**In `Caregiver`:**
-* `familyIncomeWeekly` ($I_w$): Set *once* at the start (based on the `incomeType` parameter).
-* `workloadHoursPerWeek` ($H_p$): Changes every week (gets its value from the patient's $N_C$).
-* `sleepQualityHourperWeek` ($S_h$): Changes every week (gets its value from the patient's $B$).
-* `workloadStress` ($S_W$): Calculated every week.
-* `financialStress` ($S_F$): Calculated every week.
-* `sleepStress` ($S_S$): Calculated every week.
-* `stressLevel` ($\sigma_C$): **(MAIN CAREGIVER VARIABLE)** Calculated every week based on Eq 1.4.
-* `careQuality` ($Q_C$): **(MAIN "BRIDGE" VARIABLE)** Calculated every week based on Eq 1.5.
+| Symbol | AnyLogic Variable            | Type   | Range   | Meaning                                     |
+| ------ | ---------------------------- | ------ | ------- | ------------------------------------------- |
+| σ_C    | stressLevel                  | double | 0–3     | Overall caregiver stress (weighted average) |
+| S_W    | workloadStress               | double | 0–3.0   | Stress from care hours per week             |
+| S_F    | financialStress              | double | 0–3.0   | Stress from income ratio vs. costs          |
+| S_S    | sleepStress                  | double | 0–3.0   | Stress from weekly sleep hours              |
+| Q_C    | careQuality                  | double | 0.2–1.0 | Quality of family care                      |
+| C_S    | copingSkills                 | double | 0–1     | Caregiver's coping ability                  |
+| H_p    | workloadHoursPerWeek         | double | 0+      | Hours family spends on care per week        |
+| I_w    | familyIncomeWeekly           | double | 0+      | Weekly family income                        |
+| S_h    | sleepQualityHourperWeek      | double | 0+      | Hours of sleep per week                     |
+| H(t)   | healthStatus                 | double | 0–1     | Patient's health (1=healthy, 0=end-stage)   |
+| B      | behaviouralSymptoms          | int    | 0–10    | Behavioral symptom severity                 |
+| N_C    | careNeedsHoursPerWeek        | double | 28–140  | Hours of care needed per week               |
+| Q_E    | effectiveCareQuality         | double | 0.1–1.0 | Combined family+prof. care quality          |
+| P_h    | professionalCareHoursPerWeek | double | 0+      | Hours of professional care per week         |
+| r_d    | progressionRate              | double | 1.5     | Disease decline rate (% per week)           |
+| w_W    | weightWorkload               | double | 0-1     | Weight for workload component               |
+| w_F    | weightFinancial              | double | 0-1     | Weight for financial component              |
+| w_S    | weightSleep                  | double | 0-1     | Weight for sleep component                  |
 
 ---
 
-## 5. VARIABLE REFERENCE TABLE (Updated)
-
-| Symbol | AnyLogic Variable | Type | Range | What It Means |
-| :--- | :--- | :--- | :--- | :--- |
-| $\sigma_C$ | `stressLevel` | double | 0–3 | Overall caregiver stress (average) |
-| $S_W$ | `workloadStress` | double | 0.5–3.0 | Stress from care hours **per week** |
-| $S_F$ | `financialStress` | double | 0–3.0 | Stress from **weekly** income |
-| $S_S$ | `sleepStress` | double | 0–3.0 | Stress from **weekly** sleep |
-| $Q_C$ | `careQuality` | double | 0.2–1.0 | Quality of family care |
-| $C_S$ | `copingSkills` | double | 0–1 | Caregiver's coping ability |
-| $H_p$ | `workloadHoursPerWeek` | double | 0+ | Hours family spends on care **per week** |
-| $I_w$ | `familyIncomeWeekly` | double | 0+ | **Weekly** family income |
-| $S_h$ | `sleepQualityHourperWeek` | double | 0+ | Hours of sleep **per week** |
-| $H(t)$ | `healthStatus` | double | 0–1 | Patient's health (1=healthy, 0=end-stage) |
-| $B$ | `behaviouralSymptoms` | int | 0–10 | Behavioral symptom severity |
-| $N_C$ | `careNeedsHoursPerWeek` | double | **28–140** | Hours of care needed **per week** |
-| $Q_E$ | `effectiveCareQuality` | double | 0.1–1.0 | Combined family+prof. care quality |
-| $P_h$ | `professionalCareHoursPerWeek` | double | 0+ | Hours of professional care **per week** |
-| $r_d$ | `progressionRate` | double | **1.5** | Disease decline rate (as a percentage, e.g., 1.5 for 1.5%) |
-| $w_x$ | (various) | double | 0-1 | Weights for stress components |
-
----
 
 ## 6. SUMMARY: How the Model Works
 
