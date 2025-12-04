@@ -90,9 +90,6 @@
 			</Parameter>
 			<Parameter>
 				<ParameterName>adultDayCareCenterSlots</ParameterName>
-				<ParameterValue Class="CodeValue">
-					<Code><![CDATA[5]]></Code>
-				</ParameterValue>
 			</Parameter>
 			<Parameter>
 				<ParameterName>workloadStressWeight</ParameterName>
@@ -338,13 +335,13 @@
 			<Parameter>
 				<ParameterName>patientPopulationSize</ParameterName>
 				<ParameterValue Class="CodeValue">
-					<Code><![CDATA[50]]></Code>
+					<Code><![CDATA[10]]></Code>
 				</ParameterValue>
 			</Parameter>
 			<Parameter>
 				<ParameterName>caregiverPopulationSize</ParameterName>
 				<ParameterValue Class="CodeValue">
-					<Code><![CDATA[50]]></Code>
+					<Code><![CDATA[10]]></Code>
 				</ParameterValue>
 			</Parameter>
 			<Parameter>
@@ -353,11 +350,14 @@
 			<Parameter>
 				<ParameterName>countHomes</ParameterName>
 				<ParameterValue Class="CodeValue">
-					<Code><![CDATA[50]]></Code>
+					<Code><![CDATA[10]]></Code>
 				</ParameterValue>
 			</Parameter>
 			<Parameter>
 				<ParameterName>adultDayCareCenterSlots</ParameterName>
+				<ParameterValue Class="CodeValue">
+					<Code><![CDATA[40]]></Code>
+				</ParameterValue>
 			</Parameter>
 			<Parameter>
 				<ParameterName>workloadStressWeight</ParameterName>
@@ -484,6 +484,9 @@
 			</Parameter>
 			<Parameter>
 				<ParameterName>countAdultDayCareCenters</ParameterName>
+				<ParameterValue Class="CodeValue">
+					<Code><![CDATA[5]]></Code>
+				</ParameterValue>
 			</Parameter>
 			<Parameter>
 				<ParameterName>countHomes</ParameterName>
@@ -493,6 +496,9 @@
 			</Parameter>
 			<Parameter>
 				<ParameterName>adultDayCareCenterSlots</ParameterName>
+				<ParameterValue Class="CodeValue">
+					<Code><![CDATA[40]]></Code>
+				</ParameterValue>
 			</Parameter>
 			<Parameter>
 				<ParameterName>workloadStressWeight</ParameterName>
