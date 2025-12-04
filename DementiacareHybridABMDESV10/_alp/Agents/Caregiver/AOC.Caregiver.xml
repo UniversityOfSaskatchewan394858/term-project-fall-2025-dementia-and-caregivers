@@ -191,7 +191,7 @@ stressIndicator.setFillColor(cyan);</EntryAction>
 		</StatechartElement>
 		<StatechartElement Class="State" ParentState="ROOT_NODE">
 			<Id>1762248639726</Id>
-			<Name><![CDATA[AtPCaregiversHome]]></Name>
+			<Name><![CDATA[AtCaregiversHome]]></Name>
 			<X>80</X>
 			<Y>620</Y>
 			<Label>
