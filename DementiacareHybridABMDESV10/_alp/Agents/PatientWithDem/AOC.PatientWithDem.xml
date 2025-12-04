@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActiveObjectClass>
+	<Id>1761802246035</Id>
+	<Name><![CDATA[PatientWithDem]]></Name>
+	<Import><![CDATA[import java.io.*;]]></Import>
+	<Generic>false</Generic>
+	<GenericParameter>
+		<Id>1761802246040</Id>
+		<Name><![CDATA[1761802246040]]></Name>
+		<GenericParameterValue Class="CodeValue">
+			<Code><![CDATA[T extends Agent]]></Code>
+		</GenericParameterValue>
+		<GenericParameterLabel>Generic parameter:</GenericParameterLabel>
+	</GenericParameter>
+	<Logging>false</Logging>
+	<FlowChartsUsage>ENTITY</FlowChartsUsage>
+	<SamplesToKeep>100</SamplesToKeep>
+	<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+	<ElementsLimitValue>100</ElementsLimitValue>
+	<MakeDefaultViewArea>true</MakeDefaultViewArea>
+	<SceneGridColor/>
+	<SceneBackgroundColor>-4144960</SceneBackgroundColor>
+	<SceneSkybox>null</SceneSkybox>
+	<AgentProperties>
+		<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+		<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+		<RotateAnimationVertically>false</RotateAnimationVertically>
+		<VelocityCode Class="CodeUnitValue">
+			<Code><![CDATA[10]]></Code>
+			<Unit Class="SpeedUnits">MPS</Unit>
+		</VelocityCode>
+		<PhysicalLength Class="CodeUnitValue">
+			<Code><![CDATA[1]]></Code>
+			<Unit Class="LengthUnits">METER</Unit>
+		</PhysicalLength>
+		<PhysicalWidth Class="CodeUnitValue">
+			<Code><![CDATA[1]]></Code>
+			<Unit Class="LengthUnits">METER</Unit>
+		</PhysicalWidth>
+		<PhysicalHeight Class="CodeUnitValue">
+			<Code><![CDATA[1]]></Code>
+			<Unit Class="LengthUnits">METER</Unit>
+		</PhysicalHeight>
+	</AgentProperties>
+	<EnvironmentProperties>
+		<EnableSteps>false</EnableSteps>
+		<StepDurationCode Class="CodeUnitValue">
+			<Code><![CDATA[1.0]]></Code>
+			<Unit Class="TimeUnits">SECOND</Unit>
+		</StepDurationCode>
+		<SpaceType>CONTINUOUS</SpaceType>
+		<WidthCode>500</WidthCode>
+		<HeightCode>500</HeightCode>
+		<ZHeightCode>0</ZHeightCode>
+		<ColumnsCountCode>100</ColumnsCountCode>
+		<RowsCountCode>100</RowsCountCode>
+		<NeigborhoodType>MOORE</NeigborhoodType>
+		<LayoutType>USER_DEF</LayoutType>
+		<NetworkType>USER_DEF</NetworkType>
+		<ConnectionsPerAgentCode>2</ConnectionsPerAgentCode>
+		<ConnectionsRangeCode>50</ConnectionsRangeCode>
+		<NeighborLinkFractionCode>0.95</NeighborLinkFractionCode>
+		<MCode>10</MCode>
+	</EnvironmentProperties>
+	<DatasetsCreationProperties>
+		<AutoCreate>true</AutoCreate>
+		<Id>1761802246034</Id>
+		<OccurrenceAtTime>true</OccurrenceAtTime>
+		<OccurrenceDate>1761811200000</OccurrenceDate>
+		<OccurrenceTime Class="CodeUnitValue">
+			<Code><![CDATA[0]]></Code>
+			<Unit Class="TimeUnits">WEEK</Unit>
+		</OccurrenceTime>
+		<RecurrenceCode Class="CodeUnitValue">
+			<Code><![CDATA[1]]></Code>
+			<Unit Class="TimeUnits">WEEK</Unit>
+		</RecurrenceCode>
+	</DatasetsCreationProperties>
+	<ScaleRuler>
+		<Id>1761802246038</Id>
+		<Name><![CDATA[scale]]></Name>
+		<X>0</X>
+		<Y>-150</Y>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<Length>100</Length>
+		<Rotation>0</Rotation>
+		<ScaleType>BASED_ON_LENGTH</ScaleType>
+		<ModelLength>10</ModelLength>
+		<LengthUnits>METER</LengthUnits>
+		<Scale>10</Scale>
+		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+	</ScaleRuler>
+	<CurrentLevel>1761802246041</CurrentLevel>
+	<ConnectionsId>1761802246036</ConnectionsId>
+	<Variables xmlns:al="http://anylogic.com"/>
+	<StatechartElements>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1761809433271</Id>
+			<Name><![CDATA[ModerateDementia]]></Name>
+			<X>210</X>
+			<Y>120</Y>
+			<Label>
+				<X>30</X>
+				<Y>25</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="186.02058319039452" Height="45.54656">
+				<EntryAction>demColour = orange;</EntryAction>
+				<FillColor>-23296</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1761809440342</Id>
+			<Name><![CDATA[SevereDementia]]></Name>
+			<X>480</X>
+			<Y>120</Y>
+			<Label>
+				<X>20</X>
+				<Y>25</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="161.21783876500857" Height="45.54656">
+				<EntryAction>demColour =red;</EntryAction>
+				<FillColor>-65536</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1762241833862</Id>
+			<Name><![CDATA[AtPatientsHome]]></Name>
+			<X>110</X>
+			<Y>350</Y>
+			<Label>
+				<X>10</X>
+				<Y>15</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>false</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="140" Height="40">
+				<FillColor/>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1762241839734</Id>
+			<Name><![CDATA[AtAdultDayCareCenter]]></Name>
+			<X>110</X>
+			<Y>460</Y>
+			<Label>
+				<X>5</X>
+				<Y>15</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>false</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="140" Height="40">
+				<FillColor/>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1762311900157</Id>
+			<Name><![CDATA[MildDementia]]></Name>
+			<X>10</X>
+			<Y>120</Y>
+			<Label>
+				<X>30</X>
+				<Y>25</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="156.021" Height="45.54656">
+				<EntryAction>demColour = yellow;</EntryAction>
+				<FillColor/>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1763960090228</Id>
+			<Name><![CDATA[Enrolled]]></Name>
+			<X>430</X>
+			<Y>490</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<FillColor/>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1764457280326</Id>
+			<Name><![CDATA[NotEnrolled]]></Name>
+			<X>430</X>
+			<Y>350</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<FillColor/>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1764457284872</Id>
+			<Name><![CDATA[Enrolling]]></Name>
+			<X>430</X>
+			<Y>420</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="100" Height="30">
+				<EntryAction>nearestAdultDayCareCenter.EnterEnrollmentQueue.take(this); </EntryAction>
+				<FillColor/>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
+			<Id>1761809417919</Id>
+			<Name><![CDATA[DementiaProgressionStatechart]]></Name>
+			<X>120</X>
+			<Y>40</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>80</Y>
+				</Point>
+			</Points>
+			<Properties Target="1762311900157"/>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1761809447357</Id>
+			<Name><![CDATA[changeDemStageToSevere]]></Name>
+			<X>395.021</X>
+			<Y>142.773</Y>
+			<Label>
+				<X>-5.021</X>
+				<Y>-27.773</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0.9995831903945032</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>84.97899999999998</X>
+					<Y>0</Y>
+				</Point>
+			</Points>
+			<IconOffset>40.0</IconOffset>
+			<Properties Source="1761809433271" Target="1761809440342" Trigger="condition">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>this.healthStatus &lt; 0.15;</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
+			<Id>1762241808856</Id>
+			<Name><![CDATA[PatientLocationStatechart]]></Name>
+			<X>150</X>
+			<Y>290</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>false</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>60</Y>
+				</Point>
+			</Points>
+			<Properties Target="1762241833862"/>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1762241980457</Id>
+			<Name><![CDATA[TransitionToAdultDayCareCenter]]></Name>
+			<X>210</X>
+			<Y>390</Y>
+			<Label>
+				<X>5</X>
+				<Y>30</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>false</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>70</Y>
+				</Point>
+			</Points>
+			<IconOffset>40.0</IconOffset>
+			<Properties Source="1762241833862" Target="1762241839734" Trigger="condition">
+				<Action>nearestAdultDayCareCenter.EnterAdultDayCare.take(this);</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>myCaregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || 
+DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[0.75]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<Guard>AdultDayCareEnrollmentStatusStatechart.isStateActive(Enrolled)&amp;&amp;
+currentTime == 8;
+</Guard>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1762241985421</Id>
+			<Name><![CDATA[ReturnHome]]></Name>
+			<X>140</X>
+			<Y>460</Y>
+			<Label>
+				<X>-80</X>
+				<Y>-40</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>false</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-70</Y>
+				</Point>
+			</Points>
+			<IconOffset>30.0</IconOffset>
+			<Properties Source="1762241839734" Target="1762241833862" Trigger="message">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>equalsTo</FilterType>
+				<EqualsExpression>DepartedAdultDayCareCenter</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1762312031195</Id>
+			<Name><![CDATA[changeDemStageToModerate]]></Name>
+			<X>166</X>
+			<Y>140</Y>
+			<Label>
+				<X>-26</X>
+				<Y>-30</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0.020999999999986585</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>44</X>
+					<Y>0</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1762311900157" Target="1761809433271" Trigger="condition">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>this.healthStatus &lt; 0.35;</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
+			<Id>1764457225193</Id>
+			<Name><![CDATA[AdultDayCareEnrollmentStatusStatechart]]></Name>
+			<X>460</X>
+			<Y>280</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>70</Y>
+				</Point>
+			</Points>
+			<Properties Target="1764457280326"/>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1764457291080</Id>
+			<Name><![CDATA[transition]]></Name>
+			<X>460</X>
+			<Y>380</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>40</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1764457280326" Target="1764457284872" Trigger="condition">
+				<Action>nearestAdultDayCareCenter = getNearestAgent(main.adultDayCareCenters);</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>myCaregiver.caregiverStressStatechart.isStateActive(Caregiver.SeekingSupport) || DementiaProgressionStatechart.isStateActive(SevereDementia);</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<Guard>main.enableInterventions;</Guard>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1764457298515</Id>
+			<Name><![CDATA[EnrolledMessageTransition]]></Name>
+			<X>460</X>
+			<Y>450</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>40</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1764457284872" Target="1763960090228" Trigger="message">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>equalsTo</FilterType>
+				<EqualsExpression>EnrolledInAdultDayCare</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition"
+                     ParentState="AtPatientsHome"
+                     ParentStateId="1762241833862">
+			<Id>1764467896127</Id>
+			<Name><![CDATA[transition2]]></Name>
+			<X>230</X>
+			<Y>390</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>false</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>10</X>
+					<Y>-40</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1762241833862" Target="1762241833862" Trigger="timeout">
+				<Action>currentTime = getHourOfDay()</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+	</StatechartElements>
+	<Events xmlns:al="http://anylogic.com"/>
+	<Functions xmlns:al="http://anylogic.com"/>
+	<AgentLinks>
+		<AgentLink>
+			<Id>1761802246036</Id>
+			<Name><![CDATA[connections]]></Name>
+			<X>50</X>
+			<Y>-50</Y>
+			<Label>
+				<X>15</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<HandleReceiveInConnections>false</HandleReceiveInConnections>
+			<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+			<AgentLinkBidirectional>true</AgentLinkBidirectional>
+			<MessageType>Object</MessageType>
+			<StatechartReference>
+				<PackageName>dementiacarehybridabmdesv3</PackageName>
+				<ClassName>PatientWithDem</ClassName>
+				<ItemName>DementiaProgressionStatechart</ItemName>
+			</StatechartReference>
+			<StatechartReference>
+				<PackageName>dementiacarehybridabmdesv3</PackageName>
+				<ClassName>PatientWithDem</ClassName>
+				<ItemName>PatientLocationStatechart</ItemName>
+			</StatechartReference>
+			<StatechartReference>
+				<PackageName>dementiacarehybridabmdesv3</PackageName>
+				<ClassName>PatientWithDem</ClassName>
+				<ItemName>AdultDayCareEnrollmentStatusStatechart</ItemName>
+			</StatechartReference>
+			<DrawLine>true</DrawLine>
+			<LineStyle>SOLID</LineStyle>
+			<LineWidth>1</LineWidth>
+			<LineColor>-16777216</LineColor>
+			<LineZOrder>UNDER_AGENTS</LineZOrder>
+			<LineArrow>NONE</LineArrow>
+			<LineArrowPosition>END</LineArrowPosition>
+		</AgentLink>
+	</AgentLinks>
+	<ContainerLinks>
+		<ContainerLink>
+			<Id>1761802710211</Id>
+			<Name><![CDATA[main]]></Name>
+			<X>50</X>
+			<Y>-100</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<ActiveObjectClass>
+				<PackageName>dementiacarehybridabmdesv3</PackageName>
+				<ClassName>Main</ClassName>
+			</ActiveObjectClass>
+		</ContainerLink>
+	</ContainerLinks>
+	<Presentation>
+		<Level>
+			<Id>1761802246041</Id>
+			<Name><![CDATA[level]]></Name>
+			<X>0</X>
+			<Y>0</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>true</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+			<Z>0</Z>
+			<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+			<Presentation xmlns:al="http://anylogic.com"/>
+		</Level>
+	</Presentation>
+</ActiveObjectClass>
