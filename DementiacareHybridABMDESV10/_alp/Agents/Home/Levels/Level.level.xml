@@ -1,492 +1,492 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Presentation>
-	<Group>
-		<Id>1762243554201</Id>
-		<Name><![CDATA[house]]></Name>
-		<X>0</X>
-		<Y>0</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Presentation>
-			<Polyline>
-				<Id>1762243554203</Id>
-				<Name><![CDATA[_ps257]]></Name>
-				<X>-1</X>
-				<Y>10</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor/>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<FillColor>-11563064</FillColor>
-				<FillMaterial>null</FillMaterial>
-				<Points>
-					<Point>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>10</X>
-						<Y>-5</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>10</X>
-						<Y>-11</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>0</X>
-						<Y>-6</Y>
-						<Z>0</Z>
-					</Point>
-				</Points>
-				<Closed>true</Closed>
-			</Polyline>
-			<Polyline>
-				<Id>1762243554205</Id>
-				<Name><![CDATA[_ps258]]></Name>
-				<X>-1</X>
-				<Y>4</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor/>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<FillColor>-5716507</FillColor>
-				<FillMaterial>null</FillMaterial>
-				<Points>
-					<Point>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>10</X>
-						<Y>-5</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>5</X>
-						<Y>-11</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>-5</X>
-						<Y>-6</Y>
-						<Z>0</Z>
-					</Point>
-				</Points>
-				<Closed>true</Closed>
-			</Polyline>
-			<Polyline>
-				<Id>1762243554207</Id>
-				<Name><![CDATA[_ps259]]></Name>
-				<X>-11</X>
-				<Y>5</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor/>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<FillColor>-8607017</FillColor>
-				<FillMaterial>null</FillMaterial>
-				<Points>
-					<Point>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>0</X>
-						<Y>-6</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>5</X>
-						<Y>-7</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>10</X>
-						<Y>-1</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>10</X>
-						<Y>5</Y>
-						<Z>0</Z>
-					</Point>
-				</Points>
-				<Closed>true</Closed>
-			</Polyline>
-			<Polyline>
-				<Id>1762243554209</Id>
-				<Name><![CDATA[_ps260]]></Name>
-				<X>-11</X>
-				<Y>-1</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor/>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<FillColor>-2168075</FillColor>
-				<FillMaterial>null</FillMaterial>
-				<Points>
-					<Point>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>10</X>
-						<Y>-5</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>15</X>
-						<Y>-6</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>5</X>
-						<Y>-1</Y>
-						<Z>0</Z>
-					</Point>
-				</Points>
-				<Closed>true</Closed>
-			</Polyline>
-			<Polyline>
-				<Id>1762243554211</Id>
-				<Name><![CDATA[_ps261]]></Name>
-				<X>-1</X>
-				<Y>10</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor>-14734530</LineColor>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<FillColor/>
-				<FillMaterial>null</FillMaterial>
-				<Points>
-					<Point>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>10</X>
-						<Y>-5</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>10</X>
-						<Y>-11</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>5</X>
-						<Y>-17</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>0</X>
-						<Y>-16</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>-10</X>
-						<Y>-11</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>-10</X>
-						<Y>-5</Y>
-						<Z>0</Z>
-					</Point>
-				</Points>
-				<Closed>true</Closed>
-			</Polyline>
-			<Polyline>
-				<Id>1762243554213</Id>
-				<Name><![CDATA[_ps262]]></Name>
-				<X>-9</X>
-				<Y>4</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor/>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<FillColor>-12823945</FillColor>
-				<FillMaterial>null</FillMaterial>
-				<Points>
-					<Point>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>2</X>
-						<Y>1</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>2</X>
-						<Y>-2</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>0</X>
-						<Y>-3</Y>
-						<Z>0</Z>
-					</Point>
-				</Points>
-				<Closed>true</Closed>
-			</Polyline>
-			<Polyline>
-				<Id>1762243554215</Id>
-				<Name><![CDATA[_ps263]]></Name>
-				<X>1</X>
-				<Y>7</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor/>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<FillColor>-12823945</FillColor>
-				<FillMaterial>null</FillMaterial>
-				<Points>
-					<Point>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>2</X>
-						<Y>-1</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>2</X>
-						<Y>-4</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>0</X>
-						<Y>-3</Y>
-						<Z>0</Z>
-					</Point>
-				</Points>
-				<Closed>true</Closed>
-			</Polyline>
-			<Polyline>
-				<Id>1762243554217</Id>
-				<Name><![CDATA[_ps264]]></Name>
-				<X>-5</X>
-				<Y>6</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor/>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<FillColor>-12823945</FillColor>
-				<FillMaterial>null</FillMaterial>
-				<Points>
-					<Point>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>2</X>
-						<Y>1</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>2</X>
-						<Y>-2</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>0</X>
-						<Y>-3</Y>
-						<Z>0</Z>
-					</Point>
-				</Points>
-				<Closed>true</Closed>
-			</Polyline>
-			<Polyline>
-				<Id>1762243554219</Id>
-				<Name><![CDATA[_ps265]]></Name>
-				<X>-1</X>
-				<Y>10</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor/>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<FillColor>1342177280</FillColor>
-				<FillMaterial>null</FillMaterial>
-				<Points>
-					<Point>
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>4</X>
-						<Y>2</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>14</X>
-						<Y>-3</Y>
-						<Z>0</Z>
-					</Point>
-					<Point>
-						<X>10</X>
-						<Y>-5</Y>
-						<Z>0</Z>
-					</Point>
-				</Points>
-				<Closed>true</Closed>
-			</Polyline>
-		</Presentation>
-	</Group>
-</Presentation>
+<?xml version="1.0" encoding="UTF-8"?>
+<Presentation>
+	<Group>
+		<Id>1762243554201</Id>
+		<Name><![CDATA[house]]></Name>
+		<X>0</X>
+		<Y>0</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<Polyline>
+				<Id>1762243554203</Id>
+				<Name><![CDATA[_ps257]]></Name>
+				<X>-1</X>
+				<Y>10</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<BeginArrowSize>1</BeginArrowSize>
+				<BeginArrowStyle>0</BeginArrowStyle>
+				<EndArrowSize>1</EndArrowSize>
+				<EndArrowStyle>0</EndArrowStyle>
+				<FillColor>-11563064</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<Points>
+					<Point>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>10</X>
+						<Y>-5</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>10</X>
+						<Y>-11</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>0</X>
+						<Y>-6</Y>
+						<Z>0</Z>
+					</Point>
+				</Points>
+				<Closed>true</Closed>
+			</Polyline>
+			<Polyline>
+				<Id>1762243554205</Id>
+				<Name><![CDATA[_ps258]]></Name>
+				<X>-1</X>
+				<Y>4</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<BeginArrowSize>1</BeginArrowSize>
+				<BeginArrowStyle>0</BeginArrowStyle>
+				<EndArrowSize>1</EndArrowSize>
+				<EndArrowStyle>0</EndArrowStyle>
+				<FillColor>-5716507</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<Points>
+					<Point>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>10</X>
+						<Y>-5</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>5</X>
+						<Y>-11</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>-5</X>
+						<Y>-6</Y>
+						<Z>0</Z>
+					</Point>
+				</Points>
+				<Closed>true</Closed>
+			</Polyline>
+			<Polyline>
+				<Id>1762243554207</Id>
+				<Name><![CDATA[_ps259]]></Name>
+				<X>-11</X>
+				<Y>5</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<BeginArrowSize>1</BeginArrowSize>
+				<BeginArrowStyle>0</BeginArrowStyle>
+				<EndArrowSize>1</EndArrowSize>
+				<EndArrowStyle>0</EndArrowStyle>
+				<FillColor>-8607017</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<Points>
+					<Point>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>0</X>
+						<Y>-6</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>5</X>
+						<Y>-7</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>10</X>
+						<Y>-1</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>10</X>
+						<Y>5</Y>
+						<Z>0</Z>
+					</Point>
+				</Points>
+				<Closed>true</Closed>
+			</Polyline>
+			<Polyline>
+				<Id>1762243554209</Id>
+				<Name><![CDATA[_ps260]]></Name>
+				<X>-11</X>
+				<Y>-1</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<BeginArrowSize>1</BeginArrowSize>
+				<BeginArrowStyle>0</BeginArrowStyle>
+				<EndArrowSize>1</EndArrowSize>
+				<EndArrowStyle>0</EndArrowStyle>
+				<FillColor>-2168075</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<Points>
+					<Point>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>10</X>
+						<Y>-5</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>15</X>
+						<Y>-6</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>5</X>
+						<Y>-1</Y>
+						<Z>0</Z>
+					</Point>
+				</Points>
+				<Closed>true</Closed>
+			</Polyline>
+			<Polyline>
+				<Id>1762243554211</Id>
+				<Name><![CDATA[_ps261]]></Name>
+				<X>-1</X>
+				<Y>10</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor>-14734530</LineColor>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<BeginArrowSize>1</BeginArrowSize>
+				<BeginArrowStyle>0</BeginArrowStyle>
+				<EndArrowSize>1</EndArrowSize>
+				<EndArrowStyle>0</EndArrowStyle>
+				<FillColor/>
+				<FillMaterial>null</FillMaterial>
+				<Points>
+					<Point>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>10</X>
+						<Y>-5</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>10</X>
+						<Y>-11</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>5</X>
+						<Y>-17</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>0</X>
+						<Y>-16</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>-10</X>
+						<Y>-11</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>-10</X>
+						<Y>-5</Y>
+						<Z>0</Z>
+					</Point>
+				</Points>
+				<Closed>true</Closed>
+			</Polyline>
+			<Polyline>
+				<Id>1762243554213</Id>
+				<Name><![CDATA[_ps262]]></Name>
+				<X>-9</X>
+				<Y>4</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<BeginArrowSize>1</BeginArrowSize>
+				<BeginArrowStyle>0</BeginArrowStyle>
+				<EndArrowSize>1</EndArrowSize>
+				<EndArrowStyle>0</EndArrowStyle>
+				<FillColor>-12823945</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<Points>
+					<Point>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>2</X>
+						<Y>1</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>2</X>
+						<Y>-2</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>0</X>
+						<Y>-3</Y>
+						<Z>0</Z>
+					</Point>
+				</Points>
+				<Closed>true</Closed>
+			</Polyline>
+			<Polyline>
+				<Id>1762243554215</Id>
+				<Name><![CDATA[_ps263]]></Name>
+				<X>1</X>
+				<Y>7</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<BeginArrowSize>1</BeginArrowSize>
+				<BeginArrowStyle>0</BeginArrowStyle>
+				<EndArrowSize>1</EndArrowSize>
+				<EndArrowStyle>0</EndArrowStyle>
+				<FillColor>-12823945</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<Points>
+					<Point>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>2</X>
+						<Y>-1</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>2</X>
+						<Y>-4</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>0</X>
+						<Y>-3</Y>
+						<Z>0</Z>
+					</Point>
+				</Points>
+				<Closed>true</Closed>
+			</Polyline>
+			<Polyline>
+				<Id>1762243554217</Id>
+				<Name><![CDATA[_ps264]]></Name>
+				<X>-5</X>
+				<Y>6</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<BeginArrowSize>1</BeginArrowSize>
+				<BeginArrowStyle>0</BeginArrowStyle>
+				<EndArrowSize>1</EndArrowSize>
+				<EndArrowStyle>0</EndArrowStyle>
+				<FillColor>-12823945</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<Points>
+					<Point>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>2</X>
+						<Y>1</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>2</X>
+						<Y>-2</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>0</X>
+						<Y>-3</Y>
+						<Z>0</Z>
+					</Point>
+				</Points>
+				<Closed>true</Closed>
+			</Polyline>
+			<Polyline>
+				<Id>1762243554219</Id>
+				<Name><![CDATA[_ps265]]></Name>
+				<X>-1</X>
+				<Y>10</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<BeginArrowSize>1</BeginArrowSize>
+				<BeginArrowStyle>0</BeginArrowStyle>
+				<EndArrowSize>1</EndArrowSize>
+				<EndArrowStyle>0</EndArrowStyle>
+				<FillColor>1342177280</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<Points>
+					<Point>
+						<X>0</X>
+						<Y>0</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>4</X>
+						<Y>2</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>14</X>
+						<Y>-3</Y>
+						<Z>0</Z>
+					</Point>
+					<Point>
+						<X>10</X>
+						<Y>-5</Y>
+						<Z>0</Z>
+					</Point>
+				</Points>
+				<Closed>true</Closed>
+			</Polyline>
+		</Presentation>
+	</Group>
+</Presentation>

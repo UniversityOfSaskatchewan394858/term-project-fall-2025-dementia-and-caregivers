@@ -1,770 +1,770 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ActiveObjectClass>
-	<Id>1761802099619</Id>
-	<Name><![CDATA[Caregiver]]></Name>
-	<Import><![CDATA[import java.io.*;]]></Import>
-	<Generic>false</Generic>
-	<GenericParameter>
-		<Id>1761802099624</Id>
-		<Name><![CDATA[1761802099624]]></Name>
-		<GenericParameterValue Class="CodeValue">
-			<Code><![CDATA[T extends Agent]]></Code>
-		</GenericParameterValue>
-		<GenericParameterLabel>Generic parameter:</GenericParameterLabel>
-	</GenericParameter>
-	<Logging>false</Logging>
-	<FlowChartsUsage>ENTITY</FlowChartsUsage>
-	<SamplesToKeep>100</SamplesToKeep>
-	<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
-	<ElementsLimitValue>100</ElementsLimitValue>
-	<MakeDefaultViewArea>true</MakeDefaultViewArea>
-	<SceneGridColor/>
-	<SceneBackgroundColor>-4144960</SceneBackgroundColor>
-	<SceneSkybox>null</SceneSkybox>
-	<AgentProperties>
-		<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
-		<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
-		<RotateAnimationVertically>false</RotateAnimationVertically>
-		<VelocityCode Class="CodeUnitValue">
-			<Code><![CDATA[10]]></Code>
-			<Unit Class="SpeedUnits">MPS</Unit>
-		</VelocityCode>
-		<PhysicalLength Class="CodeUnitValue">
-			<Code><![CDATA[1]]></Code>
-			<Unit Class="LengthUnits">METER</Unit>
-		</PhysicalLength>
-		<PhysicalWidth Class="CodeUnitValue">
-			<Code><![CDATA[1]]></Code>
-			<Unit Class="LengthUnits">METER</Unit>
-		</PhysicalWidth>
-		<PhysicalHeight Class="CodeUnitValue">
-			<Code><![CDATA[1]]></Code>
-			<Unit Class="LengthUnits">METER</Unit>
-		</PhysicalHeight>
-	</AgentProperties>
-	<EnvironmentProperties>
-		<EnableSteps>false</EnableSteps>
-		<StepDurationCode Class="CodeUnitValue">
-			<Code><![CDATA[1.0]]></Code>
-			<Unit Class="TimeUnits">SECOND</Unit>
-		</StepDurationCode>
-		<SpaceType>CONTINUOUS</SpaceType>
-		<WidthCode>500</WidthCode>
-		<HeightCode>500</HeightCode>
-		<ZHeightCode>0</ZHeightCode>
-		<ColumnsCountCode>100</ColumnsCountCode>
-		<RowsCountCode>100</RowsCountCode>
-		<NeigborhoodType>MOORE</NeigborhoodType>
-		<LayoutType>USER_DEF</LayoutType>
-		<NetworkType>USER_DEF</NetworkType>
-		<ConnectionsPerAgentCode>2</ConnectionsPerAgentCode>
-		<ConnectionsRangeCode>50</ConnectionsRangeCode>
-		<NeighborLinkFractionCode>0.95</NeighborLinkFractionCode>
-		<MCode>10</MCode>
-	</EnvironmentProperties>
-	<DatasetsCreationProperties>
-		<AutoCreate>true</AutoCreate>
-		<Id>1761802099618</Id>
-		<OccurrenceAtTime>true</OccurrenceAtTime>
-		<OccurrenceDate>1761811200000</OccurrenceDate>
-		<OccurrenceTime Class="CodeUnitValue">
-			<Code><![CDATA[0]]></Code>
-			<Unit Class="TimeUnits">WEEK</Unit>
-		</OccurrenceTime>
-		<RecurrenceCode Class="CodeUnitValue">
-			<Code><![CDATA[1]]></Code>
-			<Unit Class="TimeUnits">WEEK</Unit>
-		</RecurrenceCode>
-	</DatasetsCreationProperties>
-	<ScaleRuler>
-		<Id>1761802099622</Id>
-		<Name><![CDATA[scale]]></Name>
-		<X>0</X>
-		<Y>-150</Y>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<Length>100</Length>
-		<Rotation>0</Rotation>
-		<ScaleType>BASED_ON_LENGTH</ScaleType>
-		<ModelLength>10</ModelLength>
-		<LengthUnits>METER</LengthUnits>
-		<Scale>10</Scale>
-		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
-	</ScaleRuler>
-	<CurrentLevel>1761802099625</CurrentLevel>
-	<ConnectionsId>1761802099620</ConnectionsId>
-	<Variables xmlns:al="http://anylogic.com"/>
-	<StatechartElements>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1761805698928</Id>
-			<Name><![CDATA[LowStress]]></Name>
-			<X>179.361</X>
-			<Y>90.133</Y>
-			<Label>
-				<X>65.639</X>
-				<Y>24.867</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="214.97689045034426" Height="48.10666666666667">
-				<EntryAction>DistressColour = green;
-stressIndicator.setFillColor(green);
-</EntryAction>
-				<FillColor>-16711936</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1761805707240</Id>
-			<Name><![CDATA[ModerateStress]]></Name>
-			<X>179.361</X>
-			<Y>186.347</Y>
-			<Label>
-				<X>45.639</X>
-				<Y>23.653</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="214.97689045034426" Height="48.10666666666667">
-				<EntryAction>DistressColour = yellow;
-stressIndicator.setFillColor(yellow);</EntryAction>
-				<FillColor>-10496</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1761805724605</Id>
-			<Name><![CDATA[HighStress]]></Name>
-			<X>179.361</X>
-			<Y>294.587</Y>
-			<Label>
-				<X>60.639</X>
-				<Y>25.413</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="214.97689045034426" Height="48.10666666666667">
-				<EntryAction>DistressColour = orange;
-stressIndicator.setFillColor(orange);</EntryAction>
-				<FillColor>-23296</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1761805734865</Id>
-			<Name><![CDATA[CrisisState]]></Name>
-			<X>510</X>
-			<Y>300</Y>
-			<Label>
-				<X>65</X>
-				<Y>25</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="199.62139827531965" Height="48.10666666666667">
-				<EntryAction>DistressColour = red;
-stressIndicator.setFillColor(red);</EntryAction>
-				<FillColor>-65536</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1761806900319</Id>
-			<Name><![CDATA[SeekingSupport]]></Name>
-			<X>486.471</X>
-			<Y>402.827</Y>
-			<Label>
-				<X>63.529</X>
-				<Y>37.173</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="230.33238262536884" Height="72.16000000000001">
-				<EntryAction>applyServiceRelief();
-DistressColour = cyan;
-stressIndicator.setFillColor(cyan);</EntryAction>
-				<FillColor>-16711681</FillColor>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="State" ParentState="ROOT_NODE">
-			<Id>1762248639726</Id>
-			<Name><![CDATA[AtCaregiversHome]]></Name>
-			<X>80</X>
-			<Y>620</Y>
-			<Label>
-				<X>10</X>
-				<Y>10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Properties Width="160" Height="40">
-				<FillColor/>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
-			<Id>1761805684078</Id>
-			<Name><![CDATA[caregiverStressStatechart]]></Name>
-			<X>240.783</X>
-			<Y>42.027</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>48.105999999999995</Y>
-				</Point>
-			</Points>
-			<Properties Target="1761805698928"/>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1761805772518</Id>
-			<Name><![CDATA[increaseInStress]]></Name>
-			<X>240.783</X>
-			<Y>137.24</Y>
-			<Label>
-				<X>-95.783</X>
-				<Y>21.76</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0.9996666666666556</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>49.107</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1761805698928" Target="1761805707240" Trigger="condition">
-				<Action>traceln("Moving to Moderate Distress");</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>this.stressLevel &gt;= 1.0</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[0.015]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1761805774147</Id>
-			<Name><![CDATA[increaseInStress2]]></Name>
-			<X>225.428</X>
-			<Y>234.453</Y>
-			<Label>
-				<X>-145.428</X>
-				<Y>30.547</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>6.66666666660376E-4</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>60.133999999999986</Y>
-				</Point>
-			</Points>
-			<IconOffset>30.0</IconOffset>
-			<Properties Source="1761805707240" Target="1761805724605" Trigger="condition">
-				<Action>traceln("Moving to High Distress");</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[0.015]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>this.stressLevel &gt;= 1.5</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[0.015]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1761805776265</Id>
-			<Name><![CDATA[increaseInStress3]]></Name>
-			<X>393.338</X>
-			<Y>318.64</Y>
-			<Label>
-				<X>0.662</X>
-				<Y>16.36</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0.9998904503442532</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>116.66199999999998</X>
-					<Y>0</Y>
-				</Point>
-			</Points>
-			<IconOffset>40.0</IconOffset>
-			<Properties Source="1761805724605" Target="1761805734865" Trigger="condition">
-				<Action>traceln("CRISIS ALERT!");</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[0.015]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>this.stressLevel &gt;= 2.0</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[0.015]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1761806919651</Id>
-			<Name><![CDATA[LookingforService]]></Name>
-			<X>540.182</X>
-			<Y>347.693</Y>
-			<Label>
-				<X>7.818</X>
-				<Y>22.307</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Points>
-				<Point>
-					<X>0.5289999999999964</X>
-					<Y>0.4136666666666997</Y>
-				</Point>
-				<Point>
-					<X>-0.18200000000001637</X>
-					<Y>55.134000000000015</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1761805734865" Target="1761806900319" Trigger="timeout">
-				<Action>traceln("Looking for support/interventions");</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[0.5]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>true</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[0.015]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1761807249820</Id>
-			<Name><![CDATA[descreaseInStress2]]></Name>
-			<X>332.916</X>
-			<Y>294.587</Y>
-			<Label>
-				<X>17.084</X>
-				<Y>-19.587</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>-34</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>-60.133333333333326</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1761805724605" Target="1761805707240" Trigger="condition">
-				<Action>traceln("Moving down to Moderate Distress");</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>this.stressLevel &lt; 1.5</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1761807278828</Id>
-			<Name><![CDATA[descreaseInStress]]></Name>
-			<X>332.916</X>
-			<Y>186.347</Y>
-			<Label>
-				<X>7.084</X>
-				<Y>-21.347</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>-48.107333333333344</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1761805707240" Target="1761805698928" Trigger="condition">
-				<Action>traceln("Moving to Low Distress");</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>this.stressLevel &lt; 1.0</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1761807889256</Id>
-			<Name><![CDATA[ServiceStressMitigationLv1]]></Name>
-			<X>716.803</X>
-			<Y>426.88</Y>
-			<Label>
-				<X>88.197</X>
-				<Y>-61.88</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>3.82625368843037E-4</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>78.313</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>76.777</X>
-					<Y>-204.453</Y>
-				</Point>
-				<Point>
-					<X>-322.4651095496557</X>
-					<Y>-204.453</Y>
-				</Point>
-			</Points>
-			<IconOffset>140.0</IconOffset>
-			<Properties Source="1761806900319" Target="1761805707240" Trigger="condition">
-				<Action>inService = false;
-traceln("Support mitigated to Moderate Distress");</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>stressLevel &lt; 1.5 &amp;&amp; inService == false</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<Guard>!inService</Guard>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1761808788556</Id>
-			<Name><![CDATA[ServiceStressMitigationLv2]]></Name>
-			<X>486.471</X>
-			<Y>426.88</Y>
-			<Label>
-				<X>-161.471</X>
-				<Y>-16.88</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>-184.266</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>-184.26599999999996</X>
-					<Y>-84.18633333333332</Y>
-				</Point>
-			</Points>
-			<IconOffset>20.0</IconOffset>
-			<Properties Source="1761806900319" Target="1761805724605" Trigger="condition">
-				<Action>traceln("Moving to High Distress");
-inService = false;</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>stressLevel &gt;= 1.3 &amp;&amp; inService == false</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<Guard>!inService</Guard>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1761808802506</Id>
-			<Name><![CDATA[ServiceStressMitigationLv3]]></Name>
-			<X>486.471</X>
-			<Y>462.96</Y>
-			<Label>
-				<X>-151.471</X>
-				<Y>22.04</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>-383.887</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>-385.423</X>
-					<Y>-334.341</Y>
-				</Point>
-				<Point>
-					<X>-307.11</X>
-					<Y>-336.747</Y>
-				</Point>
-			</Points>
-			<IconOffset>60.0</IconOffset>
-			<Properties Source="1761806900319" Target="1761805698928" Trigger="condition">
-				<Action>inService = false;
-traceln("Support mitigated to Low Distress");</Action>
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>stressLevel &lt; 1.0 &amp;&amp; inService == false</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<Guard>!inService</Guard>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
-			<Id>1762248630145</Id>
-			<Name><![CDATA[Location]]></Name>
-			<X>120</X>
-			<Y>580</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>false</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>0</X>
-					<Y>40</Y>
-				</Point>
-			</Points>
-			<Properties Target="1762248639726"/>
-		</StatechartElement>
-		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
-			<Id>1763771540212</Id>
-			<Name><![CDATA[transition]]></Name>
-			<X>510</X>
-			<Y>335</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Points>
-				<Point>
-					<X>0</X>
-					<Y>0</Y>
-				</Point>
-				<Point>
-					<X>-115.66210954965572</X>
-					<Y>-2.3063333333333276</Y>
-				</Point>
-			</Points>
-			<IconOffset>55.0</IconOffset>
-			<Properties Source="1761805734865" Target="1761805724605" Trigger="condition">
-				<Timeout Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">WEEK</Unit>
-				</Timeout>
-				<Condition>this.stressLevel &lt; 2.0;</Condition>
-				<Rate Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="RateUnits">PER_WEEK</Unit>
-				</Rate>
-				<MessageType>Object</MessageType>
-				<DefaultTransition>true</DefaultTransition>
-				<FilterType>unconditionally</FilterType>
-				<EqualsExpression>"text"</EqualsExpression>
-				<SatisfiesExpression>true</SatisfiesExpression>
-			</Properties>
-		</StatechartElement>
-	</StatechartElements>
-	<Functions xmlns:al="http://anylogic.com"/>
-	<AgentLinks>
-		<AgentLink>
-			<Id>1761802099620</Id>
-			<Name><![CDATA[connections]]></Name>
-			<X>50</X>
-			<Y>-50</Y>
-			<Label>
-				<X>15</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<HandleReceiveInConnections>false</HandleReceiveInConnections>
-			<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
-			<AgentLinkBidirectional>true</AgentLinkBidirectional>
-			<MessageType>Object</MessageType>
-			<StatechartReference>
-				<PackageName>dementiacarehybridabmdesv3</PackageName>
-				<ClassName>Caregiver</ClassName>
-				<ItemName>caregiverStressStatechart</ItemName>
-			</StatechartReference>
-			<StatechartReference>
-				<PackageName>dementiacarehybridabmdesv3</PackageName>
-				<ClassName>Caregiver</ClassName>
-				<ItemName>Location</ItemName>
-			</StatechartReference>
-			<LineStyle>SOLID</LineStyle>
-			<LineWidth>1</LineWidth>
-			<LineColor>-16777216</LineColor>
-			<LineZOrder>UNDER_AGENTS</LineZOrder>
-			<LineArrow>NONE</LineArrow>
-			<LineArrowPosition>END</LineArrowPosition>
-		</AgentLink>
-	</AgentLinks>
-	<ContainerLinks>
-		<ContainerLink>
-			<Id>1761802694931</Id>
-			<Name><![CDATA[main]]></Name>
-			<X>50</X>
-			<Y>-100</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<ActiveObjectClass>
-				<PackageName>dementiacarehybridabmdesv3</PackageName>
-				<ClassName>Main</ClassName>
-			</ActiveObjectClass>
-		</ContainerLink>
-	</ContainerLinks>
-	<Presentation>
-		<Level>
-			<Id>1761802099625</Id>
-			<Name><![CDATA[level]]></Name>
-			<X>0</X>
-			<Y>0</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>true</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-			<Z>0</Z>
-			<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
-			<Presentation xmlns:al="http://anylogic.com"/>
-		</Level>
-	</Presentation>
-</ActiveObjectClass>
+<?xml version="1.0" encoding="UTF-8"?>
+<ActiveObjectClass>
+	<Id>1761802099619</Id>
+	<Name><![CDATA[Caregiver]]></Name>
+	<Import><![CDATA[import java.io.*;]]></Import>
+	<Generic>false</Generic>
+	<GenericParameter>
+		<Id>1761802099624</Id>
+		<Name><![CDATA[1761802099624]]></Name>
+		<GenericParameterValue Class="CodeValue">
+			<Code><![CDATA[T extends Agent]]></Code>
+		</GenericParameterValue>
+		<GenericParameterLabel>Generic parameter:</GenericParameterLabel>
+	</GenericParameter>
+	<Logging>false</Logging>
+	<FlowChartsUsage>ENTITY</FlowChartsUsage>
+	<SamplesToKeep>100</SamplesToKeep>
+	<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+	<ElementsLimitValue>100</ElementsLimitValue>
+	<MakeDefaultViewArea>true</MakeDefaultViewArea>
+	<SceneGridColor/>
+	<SceneBackgroundColor>-4144960</SceneBackgroundColor>
+	<SceneSkybox>null</SceneSkybox>
+	<AgentProperties>
+		<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+		<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+		<RotateAnimationVertically>false</RotateAnimationVertically>
+		<VelocityCode Class="CodeUnitValue">
+			<Code><![CDATA[10]]></Code>
+			<Unit Class="SpeedUnits">MPS</Unit>
+		</VelocityCode>
+		<PhysicalLength Class="CodeUnitValue">
+			<Code><![CDATA[1]]></Code>
+			<Unit Class="LengthUnits">METER</Unit>
+		</PhysicalLength>
+		<PhysicalWidth Class="CodeUnitValue">
+			<Code><![CDATA[1]]></Code>
+			<Unit Class="LengthUnits">METER</Unit>
+		</PhysicalWidth>
+		<PhysicalHeight Class="CodeUnitValue">
+			<Code><![CDATA[1]]></Code>
+			<Unit Class="LengthUnits">METER</Unit>
+		</PhysicalHeight>
+	</AgentProperties>
+	<EnvironmentProperties>
+		<EnableSteps>false</EnableSteps>
+		<StepDurationCode Class="CodeUnitValue">
+			<Code><![CDATA[1.0]]></Code>
+			<Unit Class="TimeUnits">SECOND</Unit>
+		</StepDurationCode>
+		<SpaceType>CONTINUOUS</SpaceType>
+		<WidthCode>500</WidthCode>
+		<HeightCode>500</HeightCode>
+		<ZHeightCode>0</ZHeightCode>
+		<ColumnsCountCode>100</ColumnsCountCode>
+		<RowsCountCode>100</RowsCountCode>
+		<NeigborhoodType>MOORE</NeigborhoodType>
+		<LayoutType>USER_DEF</LayoutType>
+		<NetworkType>USER_DEF</NetworkType>
+		<ConnectionsPerAgentCode>2</ConnectionsPerAgentCode>
+		<ConnectionsRangeCode>50</ConnectionsRangeCode>
+		<NeighborLinkFractionCode>0.95</NeighborLinkFractionCode>
+		<MCode>10</MCode>
+	</EnvironmentProperties>
+	<DatasetsCreationProperties>
+		<AutoCreate>true</AutoCreate>
+		<Id>1761802099618</Id>
+		<OccurrenceAtTime>true</OccurrenceAtTime>
+		<OccurrenceDate>1761811200000</OccurrenceDate>
+		<OccurrenceTime Class="CodeUnitValue">
+			<Code><![CDATA[0]]></Code>
+			<Unit Class="TimeUnits">WEEK</Unit>
+		</OccurrenceTime>
+		<RecurrenceCode Class="CodeUnitValue">
+			<Code><![CDATA[1]]></Code>
+			<Unit Class="TimeUnits">WEEK</Unit>
+		</RecurrenceCode>
+	</DatasetsCreationProperties>
+	<ScaleRuler>
+		<Id>1761802099622</Id>
+		<Name><![CDATA[scale]]></Name>
+		<X>0</X>
+		<Y>-150</Y>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<Length>100</Length>
+		<Rotation>0</Rotation>
+		<ScaleType>BASED_ON_LENGTH</ScaleType>
+		<ModelLength>10</ModelLength>
+		<LengthUnits>METER</LengthUnits>
+		<Scale>10</Scale>
+		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+	</ScaleRuler>
+	<CurrentLevel>1761802099625</CurrentLevel>
+	<ConnectionsId>1761802099620</ConnectionsId>
+	<Variables xmlns:al="http://anylogic.com"/>
+	<StatechartElements>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1761805698928</Id>
+			<Name><![CDATA[LowStress]]></Name>
+			<X>179.361</X>
+			<Y>90.133</Y>
+			<Label>
+				<X>65.639</X>
+				<Y>24.867</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="214.97689045034426" Height="48.10666666666667">
+				<EntryAction>DistressColour = green;
+stressIndicator.setFillColor(green);
+</EntryAction>
+				<FillColor>-16711936</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1761805707240</Id>
+			<Name><![CDATA[ModerateStress]]></Name>
+			<X>179.361</X>
+			<Y>186.347</Y>
+			<Label>
+				<X>45.639</X>
+				<Y>23.653</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="214.97689045034426" Height="48.10666666666667">
+				<EntryAction>DistressColour = yellow;
+stressIndicator.setFillColor(yellow);</EntryAction>
+				<FillColor>-10496</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1761805724605</Id>
+			<Name><![CDATA[HighStress]]></Name>
+			<X>179.361</X>
+			<Y>294.587</Y>
+			<Label>
+				<X>60.639</X>
+				<Y>25.413</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="214.97689045034426" Height="48.10666666666667">
+				<EntryAction>DistressColour = orange;
+stressIndicator.setFillColor(orange);</EntryAction>
+				<FillColor>-23296</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1761805734865</Id>
+			<Name><![CDATA[CrisisState]]></Name>
+			<X>510</X>
+			<Y>300</Y>
+			<Label>
+				<X>65</X>
+				<Y>25</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="199.62139827531965" Height="48.10666666666667">
+				<EntryAction>DistressColour = red;
+stressIndicator.setFillColor(red);</EntryAction>
+				<FillColor>-65536</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1761806900319</Id>
+			<Name><![CDATA[SeekingSupport]]></Name>
+			<X>486.471</X>
+			<Y>402.827</Y>
+			<Label>
+				<X>63.529</X>
+				<Y>37.173</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="230.33238262536884" Height="72.16000000000001">
+				<EntryAction>applyServiceRelief();
+DistressColour = cyan;
+stressIndicator.setFillColor(cyan);</EntryAction>
+				<FillColor>-16711681</FillColor>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="State" ParentState="ROOT_NODE">
+			<Id>1762248639726</Id>
+			<Name><![CDATA[AtCaregiversHome]]></Name>
+			<X>80</X>
+			<Y>620</Y>
+			<Label>
+				<X>10</X>
+				<Y>10</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>false</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Properties Width="160" Height="40">
+				<FillColor/>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
+			<Id>1761805684078</Id>
+			<Name><![CDATA[caregiverStressStatechart]]></Name>
+			<X>240.783</X>
+			<Y>42.027</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>48.105999999999995</Y>
+				</Point>
+			</Points>
+			<Properties Target="1761805698928"/>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1761805772518</Id>
+			<Name><![CDATA[increaseInStress]]></Name>
+			<X>240.783</X>
+			<Y>137.24</Y>
+			<Label>
+				<X>-95.783</X>
+				<Y>21.76</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0.9996666666666556</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>49.107</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1761805698928" Target="1761805707240" Trigger="condition">
+				<Action>traceln("Moving to Moderate Distress");</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>this.stressLevel &gt;= 1.0</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[0.015]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1761805774147</Id>
+			<Name><![CDATA[increaseInStress2]]></Name>
+			<X>225.428</X>
+			<Y>234.453</Y>
+			<Label>
+				<X>-145.428</X>
+				<Y>30.547</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>6.66666666660376E-4</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>60.133999999999986</Y>
+				</Point>
+			</Points>
+			<IconOffset>30.0</IconOffset>
+			<Properties Source="1761805707240" Target="1761805724605" Trigger="condition">
+				<Action>traceln("Moving to High Distress");</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[0.015]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>this.stressLevel &gt;= 1.5</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[0.015]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1761805776265</Id>
+			<Name><![CDATA[increaseInStress3]]></Name>
+			<X>393.338</X>
+			<Y>318.64</Y>
+			<Label>
+				<X>0.662</X>
+				<Y>16.36</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0.9998904503442532</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>116.66199999999998</X>
+					<Y>0</Y>
+				</Point>
+			</Points>
+			<IconOffset>40.0</IconOffset>
+			<Properties Source="1761805724605" Target="1761805734865" Trigger="condition">
+				<Action>traceln("CRISIS ALERT!");</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[0.015]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>this.stressLevel &gt;= 2.0</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[0.015]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1761806919651</Id>
+			<Name><![CDATA[LookingforService]]></Name>
+			<X>540.182</X>
+			<Y>347.693</Y>
+			<Label>
+				<X>7.818</X>
+				<Y>22.307</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0.5289999999999964</X>
+					<Y>0.4136666666666997</Y>
+				</Point>
+				<Point>
+					<X>-0.18200000000001637</X>
+					<Y>55.134000000000015</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1761805734865" Target="1761806900319" Trigger="timeout">
+				<Action>traceln("Looking for support/interventions");</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[0.5]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>true</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[0.015]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1761807249820</Id>
+			<Name><![CDATA[descreaseInStress2]]></Name>
+			<X>332.916</X>
+			<Y>294.587</Y>
+			<Label>
+				<X>17.084</X>
+				<Y>-19.587</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-34</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-60.133333333333326</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1761805724605" Target="1761805707240" Trigger="condition">
+				<Action>traceln("Moving down to Moderate Distress");</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>this.stressLevel &lt; 1.5</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1761807278828</Id>
+			<Name><![CDATA[descreaseInStress]]></Name>
+			<X>332.916</X>
+			<Y>186.347</Y>
+			<Label>
+				<X>7.084</X>
+				<Y>-21.347</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>-48.107333333333344</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1761805707240" Target="1761805698928" Trigger="condition">
+				<Action>traceln("Moving to Low Distress");</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>this.stressLevel &lt; 1.0</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1761807889256</Id>
+			<Name><![CDATA[ServiceStressMitigationLv1]]></Name>
+			<X>716.803</X>
+			<Y>426.88</Y>
+			<Label>
+				<X>88.197</X>
+				<Y>-61.88</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>3.82625368843037E-4</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>78.313</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>76.777</X>
+					<Y>-204.453</Y>
+				</Point>
+				<Point>
+					<X>-322.4651095496557</X>
+					<Y>-204.453</Y>
+				</Point>
+			</Points>
+			<IconOffset>140.0</IconOffset>
+			<Properties Source="1761806900319" Target="1761805707240" Trigger="condition">
+				<Action>inService = false;
+traceln("Support mitigated to Moderate Distress");</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>stressLevel &lt; 1.5 &amp;&amp; inService == false</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<Guard>!inService</Guard>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1761808788556</Id>
+			<Name><![CDATA[ServiceStressMitigationLv2]]></Name>
+			<X>486.471</X>
+			<Y>426.88</Y>
+			<Label>
+				<X>-161.471</X>
+				<Y>-16.88</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>-184.266</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>-184.26599999999996</X>
+					<Y>-84.18633333333332</Y>
+				</Point>
+			</Points>
+			<IconOffset>20.0</IconOffset>
+			<Properties Source="1761806900319" Target="1761805724605" Trigger="condition">
+				<Action>traceln("Moving to High Distress");
+inService = false;</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>stressLevel &gt;= 1.3 &amp;&amp; inService == false</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<Guard>!inService</Guard>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1761808802506</Id>
+			<Name><![CDATA[ServiceStressMitigationLv3]]></Name>
+			<X>486.471</X>
+			<Y>462.96</Y>
+			<Label>
+				<X>-151.471</X>
+				<Y>22.04</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>-383.887</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>-385.423</X>
+					<Y>-334.341</Y>
+				</Point>
+				<Point>
+					<X>-307.11</X>
+					<Y>-336.747</Y>
+				</Point>
+			</Points>
+			<IconOffset>60.0</IconOffset>
+			<Properties Source="1761806900319" Target="1761805698928" Trigger="condition">
+				<Action>inService = false;
+traceln("Support mitigated to Low Distress");</Action>
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>stressLevel &lt; 1.0 &amp;&amp; inService == false</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<Guard>!inService</Guard>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+		<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
+			<Id>1762248630145</Id>
+			<Name><![CDATA[Location]]></Name>
+			<X>120</X>
+			<Y>580</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>false</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>0</X>
+					<Y>40</Y>
+				</Point>
+			</Points>
+			<Properties Target="1762248639726"/>
+		</StatechartElement>
+		<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+			<Id>1763771540212</Id>
+			<Name><![CDATA[transition]]></Name>
+			<X>510</X>
+			<Y>335</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<Points>
+				<Point>
+					<X>0</X>
+					<Y>0</Y>
+				</Point>
+				<Point>
+					<X>-115.66210954965572</X>
+					<Y>-2.3063333333333276</Y>
+				</Point>
+			</Points>
+			<IconOffset>55.0</IconOffset>
+			<Properties Source="1761805734865" Target="1761805724605" Trigger="condition">
+				<Timeout Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</Timeout>
+				<Condition>this.stressLevel &lt; 2.0;</Condition>
+				<Rate Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="RateUnits">PER_WEEK</Unit>
+				</Rate>
+				<MessageType>Object</MessageType>
+				<DefaultTransition>true</DefaultTransition>
+				<FilterType>unconditionally</FilterType>
+				<EqualsExpression>"text"</EqualsExpression>
+				<SatisfiesExpression>true</SatisfiesExpression>
+			</Properties>
+		</StatechartElement>
+	</StatechartElements>
+	<Functions xmlns:al="http://anylogic.com"/>
+	<AgentLinks>
+		<AgentLink>
+			<Id>1761802099620</Id>
+			<Name><![CDATA[connections]]></Name>
+			<X>50</X>
+			<Y>-50</Y>
+			<Label>
+				<X>15</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<HandleReceiveInConnections>false</HandleReceiveInConnections>
+			<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+			<AgentLinkBidirectional>true</AgentLinkBidirectional>
+			<MessageType>Object</MessageType>
+			<StatechartReference>
+				<PackageName>dementiacarehybridabmdesv3</PackageName>
+				<ClassName>Caregiver</ClassName>
+				<ItemName>caregiverStressStatechart</ItemName>
+			</StatechartReference>
+			<StatechartReference>
+				<PackageName>dementiacarehybridabmdesv3</PackageName>
+				<ClassName>Caregiver</ClassName>
+				<ItemName>Location</ItemName>
+			</StatechartReference>
+			<LineStyle>SOLID</LineStyle>
+			<LineWidth>1</LineWidth>
+			<LineColor>-16777216</LineColor>
+			<LineZOrder>UNDER_AGENTS</LineZOrder>
+			<LineArrow>NONE</LineArrow>
+			<LineArrowPosition>END</LineArrowPosition>
+		</AgentLink>
+	</AgentLinks>
+	<ContainerLinks>
+		<ContainerLink>
+			<Id>1761802694931</Id>
+			<Name><![CDATA[main]]></Name>
+			<X>50</X>
+			<Y>-100</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<ActiveObjectClass>
+				<PackageName>dementiacarehybridabmdesv3</PackageName>
+				<ClassName>Main</ClassName>
+			</ActiveObjectClass>
+		</ContainerLink>
+	</ContainerLinks>
+	<Presentation>
+		<Level>
+			<Id>1761802099625</Id>
+			<Name><![CDATA[level]]></Name>
+			<X>0</X>
+			<Y>0</Y>
+			<Label>
+				<X>10</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>true</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>false</ShowLabel>
+			<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+			<Z>0</Z>
+			<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+			<Presentation xmlns:al="http://anylogic.com"/>
+		</Level>
+	</Presentation>
+</ActiveObjectClass>
