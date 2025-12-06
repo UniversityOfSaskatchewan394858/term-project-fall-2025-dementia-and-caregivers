@@ -129,6 +129,37 @@ traceln("===== Initialization Complete =====");]]></StartupCode>
 	<Variables xmlns:al="http://anylogic.com"/>
 	<Events xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
+	<AnalysisData>
+		<DataSet>
+			<Id>1765005860717</Id>
+			<Name><![CDATA[dsSevereDementia]]></Name>
+			<X>-60</X>
+			<Y>730</Y>
+			<Label>
+				<X>-115</X>
+				<Y>0</Y>
+			</Label>
+			<PublicFlag>false</PublicFlag>
+			<PresentationFlag>true</PresentationFlag>
+			<ShowLabel>true</ShowLabel>
+			<AutoUpdate>false</AutoUpdate>
+			<RecurrenceProperties>
+				<Id>1765005860715</Id>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1765008000000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">WEEK</Unit>
+				</RecurrenceCode>
+			</RecurrenceProperties>
+			<FreezeXAxis>true</FreezeXAxis>
+			<SamplesToKeep>10000</SamplesToKeep>
+		</DataSet>
+	</AnalysisData>
 	<Connectivity>
 		<TextFile>
 			<Id>1764547461802</Id>

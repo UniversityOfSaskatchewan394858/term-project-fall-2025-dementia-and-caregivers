@@ -1,6 +1,6 @@
 void WeeklyStressUpdate()
 {/*ALCODESTART::1763768351391*/
-
+int countSevereDementia = 0;
 // WEEKLY UPDATE - Runs every 7 days
 traceln("=== Week " + (time() / 7) + " Update ===");
 
@@ -14,6 +14,10 @@ for (Caregiver c : caregivers) {
         double baseSleepPerWeek = 56.0; // 8 hours * 7 days
         double sleepLossPerWeek = c.myPatient.behaviourSymptomSeverity * 2.8;
         c.sleepQualityHoursPerWeek = Math.max(0, baseSleepPerWeek - sleepLossPerWeek);
+        
+        if (c.myPatient.DementiaProgressionStatechart.isStateActive(PatientWithDem.SevereDementia)) {
+        	countSevereDementia += 1;
+        }
     }
     
     // 2. CONVERT TO STRESS SCORES (0-3 for each dimension)
@@ -34,9 +38,9 @@ for (Caregiver c : caregivers) {
     c.updateDistressColour();
 }
 
-
-
 traceln("Average stress: " + caregivers.stream().mapToDouble(c -> c.stressLevel).average().orElse(0));
+
+dsSevereDementia.add(countSevereDementia);
 /*ALCODEEND*/}
 
 void ApplyInterventions()
@@ -79,15 +83,17 @@ void recordWeeklyData()
 int week = (int) time();
 
 for (Caregiver c : caregivers) {
-   csvWriter.println(
-        c.getId() + "," +
-        week + "," +
-        c.stressLevel + "," +
-        c.sleepQualityHoursPerWeek + "," +
-        c.workloadHoursPerWeek + "," +
-        c.familyWeeklyIncome + "," +
-        c.careQuality
-    );
+	if (csvWriter != null) {
+	   csvWriter.println(
+	        c.getId() + "," +
+	        week + "," +
+	        c.stressLevel + "," +
+	        c.sleepQualityHoursPerWeek + "," +
+	        c.workloadHoursPerWeek + "," +
+	        c.familyWeeklyIncome + "," +
+	        c.careQuality
+	    );
+	}
 }
 
 /*ALCODEEND*/}
@@ -97,14 +103,16 @@ void recordWeeklyPatientData()
 int week = (int) time();
 
 for (PatientWithDem p : patientWithDem) {
-   patientCsvWriter.println(
-        p.getId() + "," +
-        week + "," +
-      	p.healthStatus + "," +
-   		p.careNeedHoursPerWeek + "," +
-    	p.diseaseProgressionRate + "," +
-    	p.behaviourSymptomSeverity
-    );
+	if(patientCsvWriter != null){
+	   patientCsvWriter.println(
+	        p.getId() + "," +
+	        week + "," +
+	      	p.healthStatus + "," +
+	   		p.careNeedHoursPerWeek + "," +
+	    	p.diseaseProgressionRate + "," +
+	    	p.behaviourSymptomSeverity
+	    );
+    }
 }
 /*ALCODEEND*/}
 
